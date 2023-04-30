@@ -61,6 +61,11 @@ block content
 				a.btn.btn_green(href='#')
 					+svg('ic-briefcase','ic-briefcase', '15', '15')
 					|Кнопка
+				br
+				br
+				button.btn(type="submit", href='#', disabled="disabled")
+					+svg('ic-briefcase','ic-briefcase', '15', '15')
+					|Кнопка
 
 				br
 				br
@@ -113,6 +118,16 @@ block content
 
 					.type-icon__item
 						.type-icon__img
+							+svg('ic-arr-left','ic-arr-left', '10', '8')
+						.type-icon__name ic-arr-left
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arr-right','ic-arr-right', '10', '8')
+						.type-icon__name ic-arr-right
+
+					.type-icon__item
+						.type-icon__img
 							+svg('ic-briefcase','ic-briefcase', '15', '15')
 						.type-icon__name ic-briefcase
 
@@ -125,3 +140,23 @@ block content
 						.type-icon__img
 							+svg('ic-notice','ic-notice', '18', '21')
 						.type-icon__name ic-notice
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-plus','ic-plus', '10', '10')
+						.type-icon__name ic-plus
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-minus','ic-minus', '7', '1')
+						.type-icon__name ic-minus
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-call','ic-call', '16', '16')
+						.type-icon__name ic-call
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-bin','ic-bin', '12', '14')
+						.type-icon__name ic-bin

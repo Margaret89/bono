@@ -1,0 +1,59 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Create company';
+	- 
+		var pagelist = [
+			{href: 'create-company.html',name:'Create company'},
+			{href: 'tipografika.html',name:'Typography'},
+		];
+
+block content
+	section.create-company
+		.create-company__content
+			.create-company__title Create your first campaign
+
+			.steps
+				.steps__item.active
+					span.steps__num 1
+				.steps__item.active
+					span.steps__num 2
+				.steps__item.active
+					span.steps__num 3
+				.steps__item.active
+					span.steps__num 4
+				.steps__item.active.current
+					span.steps__num 5
+				.steps__item
+					span.steps__num 6
+
+			form.form-site
+				.form-site__content
+					.form-site__item
+						.add-link
+							.add-link__item
+								input(type="text", name="", placeholder="Add link", value="https://bit.ly/campain=312=affilator")
+								input(type="text", name="", placeholder="UTM", value="Facebook Post 4")
+								.add-link__del
+									+svg('ic-bin','ic-bin', '12', '14')
+
+							.add-link__item
+								input(type="text", name="", placeholder="Add link")
+								input(type="text", name="", placeholder="UTM")
+								.add-link__del
+									+svg('ic-bin','ic-bin', '12', '14')
+
+							.btn.btn_grey
+								+svg('ic-plus','ic-plus', '10', '10')
+								|Add more link source
+						
+
+				.form-site__btn.form-site__btn_sb
+					button.btn.btn_opacity
+						+svg('ic-arr-left','ic-arr-left', '10', '8')
+						|Back
+
+					button.btn
+						|Next
+						+svg('ic-arr-right','ic-arr-right', '10', '8')
+		

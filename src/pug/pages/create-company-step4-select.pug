@@ -1,0 +1,58 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Create company';
+	- 
+		var pagelist = [
+			{href: 'create-company.html',name:'Create company'},
+			{href: 'tipografika.html',name:'Typography'},
+		];
+
+block content
+	section.create-company
+		.create-company__content
+			.create-company__title Create your first campaign
+
+			.steps
+				.steps__item.active
+					span.steps__num 1
+				.steps__item.active
+					span.steps__num 2
+				.steps__item.active
+					span.steps__num 3
+				.steps__item.active.current
+					span.steps__num 4
+				.steps__item
+					span.steps__num 5
+				.steps__item
+					span.steps__num 6
+
+			form.form-site
+				.form-site__content
+					.form-site__item
+						.select
+							.select__field Virtual number
+								.select__arr
+									+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+							.select__popup.active
+								-
+									var list=[
+										{text:'053-333-3333'},
+										{text:'052-222-2222'},
+									]
+								each item in list
+									.select__item
+										.select__icon
+											+svg('ic-call','ic-call', '16', '16')
+										.select__text= item.text
+
+				.form-site__btn.form-site__btn_sb
+					button.btn.btn_opacity
+						+svg('ic-arr-left','ic-arr-left', '10', '8')
+						|Back
+
+					button.btn
+						|Skip
+						+svg('ic-arr-right','ic-arr-right', '10', '8')
+		

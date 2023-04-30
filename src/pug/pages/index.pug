@@ -1,22 +1,32 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Содержание';
+	- var title = 'Content';
 	- 
 		var pagelist = [
-			{href: 'main.html',name:'Главная'},
-			{href: 'tipografika.html',name:'Типографика'},
+			{href: 'create-company.html',name:'Create company (step 1)'},
+			{href: 'create-company-active.html',name:'Create company (step 1 active)'},
+			{href: 'create-company-step2.html',name:'Create company (step 2)'},
+			{href: 'create-company-step2-popup.html',name:'Create company (step 2 popup)'},
+			{href: 'create-company-step2-res.html',name:'Create company (step 2 result)'},
+			{href: 'create-company-step3.html',name:'Create company (step 3)'},
+			{href: 'create-company-step3-res.html',name:'Create company (step 3 result)'},
+			{href: 'create-company-step4.html',name:'Create company (step 4)'},
+			{href: 'create-company-step4-select.html',name:'Create company (step 4 select)'},
+			{href: 'create-company-step4-res.html',name:'Create company (step 4 result)'},
+			{href: 'create-company-step5.html',name:'Create company (step 5)'},
+			{href: 'create-company-step5-res.html',name:'Create company (step 5 result)'},
+			{href: 'create-company-step6.html',name:'Create company (step 6)'},
+			{href: 'create-company-step6-res.html',name:'Create company (step 6 result)'},
+			{href: 'tipografika.html',name:'Typography'},
 		];
 
 block content
 	section
-		.container
-			.row
-				.col-12
-					h1 содержание
-					ul
-						each page in pagelist
-							li
-								a(href=page.href, target="_blank")= page.name
+		h1 Content
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
 
 

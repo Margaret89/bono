@@ -90,7 +90,7 @@ button.btn{
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 7px;
+	gap: 10px;
 	height: 4.4rem;
 	border-radius: 2.2rem;
 	background: #000;
@@ -123,4 +123,37 @@ button.btn{
 		background: rgba(15,173,104,0.15);
 		color: #0FAD68;
 	}
+
+	&_grey{
+		background: #F9F9FB;
+		color: #000;
+
+		.icon{fill: #000;}
+
+		&:hover .icon{fill: #fff;}
+	}
+
+	&_opacity{
+		height: auto;
+		background: transparent;
+		padding: 0;
+		color: #000;
+
+		.icon{fill: #000;}
+
+		&:hover{
+			background: transparent;
+			color: #8A919F;
+			.icon{fill: #8A919F;}
+		}
+	}
+}
+
+.btn[disabled="disabled"],
+.btn[disabled="disabled"]:hover{
+	background: #E4E4EA;
+	color: #fff;
+	cursor: auto;
+
+	.icon{fill: #fff;}
 }
