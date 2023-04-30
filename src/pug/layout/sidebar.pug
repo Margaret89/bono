@@ -1,0 +1,21 @@
+aside.sidebar
+	.sidebar__logo
+		img(src="assets/img/logo.svg", alt="")
+
+	.sidebar__content
+		.sidebar-menu
+			-
+				var list=[
+					{icon:'ic-home', icon_width:'20', icon_height:'20'},
+					{icon:'ic-star', icon_width:'20', icon_height:'20'},
+					{icon:'ic-person', icon_width:'16', icon_height:'22'},
+					{icon:'ic-phone', icon_width:'20', icon_height:'20'},
+					{icon:'ic-people', icon_width:'20', icon_height:'20'},
+				]
+			each item in list
+				.sidebar-menu__item
+					+svg(item.icon, item.icon+' ic-stroke', item.icon_width, item.icon_height)
+
+		
+		.sidebar__arr
+			+svg('ic-arrow-right','ic-arrow-right', '6', '11')
