@@ -1,0 +1,47 @@
+/*-------------- table site -----------------*/
+.table-site-wrap{
+	border: 1px solid #EFEFF4;
+	border-radius: 20px;
+	overflow: hidden;
+
+	.pager{
+		padding: 14px 20px;
+		background: #FBFBFC;
+		border-top: 1px solid #EFEFF4;
+	}
+}
+
+.table-site{
+	width: 100%;
+
+	tr:not(:last-child){border-bottom: 1px solid #EFEFF4;}
+	
+	th,
+	td{
+		padding: 5px 15px;
+		vertical-align: middle
+	}
+	
+	th{
+		height: 4.5rem;
+		@include font(none, 600, 1.2rem, 1.6, #8A919F);
+		background: #FBFBFC;
+		vertical-align: middle;
+		border-bottom: 1px solid #EFEFF4;
+	}
+
+	td{height: 5rem;}
+
+	td:first-child,
+	th:first-child{
+		padding-left: 20px;
+	}
+
+	td:last-child,
+	th:last-child{
+		padding-right: 20px;
+	}
+
+	&__head_check{width: 50px;}
+	&__head_id{width: 60px;}
+}

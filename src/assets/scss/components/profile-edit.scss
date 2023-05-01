@@ -1,0 +1,163 @@
+/*-------------- profile-edit -----------------*/
+.profile-edit{
+	&__main{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	&__img{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		width: 72px;
+		height: 72px;
+		border-radius: 50%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-bottom: 7px;
+	}
+
+	&__name{
+		@include font(none, 600, 2rem, 1.5, #000);
+		position: relative;
+	}
+
+	&__name-edit{
+		width: 20px;
+		position: absolute;
+		top: 50%;
+		left: calc(100% + 18px);
+		transform: translateY(-50%);
+		cursor: pointer;
+
+		.icon{
+			display: block;
+			fill: #000;
+			transition: fill 0.2s ease 0s;
+		}
+
+		&:hover .icon{fill: #75769A}
+	}
+
+	&__id{
+		@include font(none, none, 1.4rem, 1.5, #75769A);
+	}
+
+	&__sect{
+		border-radius: 10px;
+		background: #FBFBFC;
+		padding: 20px;
+	}
+
+	&__sect:not(:last-child){margin-bottom: 15px;}
+	&__top:not(:last-child){margin-bottom: 20px;}
+
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+
+		.btn-circle{flex-shrink: 0;}
+	}
+
+	&__title{
+		@include font(none, 500, 1.8rem, 1.4, #000);
+	}
+
+	&__title-wrap{
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__note{
+		@include font(none, none, 1.4rem, 1.6, #75769A);
+	}
+}
+
+.profile-edit-params{
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	&__sect{position: relative;}
+
+	&__sect:not(:last-child){
+		padding-bottom: 30px;
+		margin-bottom: 26px;
+
+		&::after{
+			content: '';
+			display: block;
+			width: calc(100% + 20px);
+			height: 1px;
+			background: #EFEFF4;
+			position: absolute;
+			bottom: 0;
+			left: -20px;
+		}
+	}
+
+	&__item{
+		display: flex;
+		gap: 10px;
+		@include font(none, none, 1.6rem, none, #75769A);
+	}
+
+	&__item:not(:last-child){margin-bottom: 8px;}
+	&__label{width: 50px;}
+}
+
+.profile-edit-users{
+	display: inline-flex;
+	align-items: center;
+	gap: 15px;
+	@include font(none, 500, 1.6rem, none, #000);
+
+	&__icon{
+		flex-shrink: 0;
+
+		.icon{fill: #000;}
+	}
+}
+
+.tags-list{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 10px;
+}
+
+.tag-item{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	height: 3.4rem;
+	border-radius: 1.9rem;
+	background: #F5F5F9;
+	padding: 0 11px 0 12px;
+	@include font(none, none, 1.3rem, 1.2, #000);
+
+	&__del{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		border: 1px solid #000;
+		cursor: pointer;
+
+		.icon{fill: #000;}
+
+		&:hover{
+			border-color: #8A919F;
+			.icon{fill: #8A919F;}
+		}
+	}
+}

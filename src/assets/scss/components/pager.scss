@@ -1,0 +1,57 @@
+/*-------------- pager -----------*/
+.pager{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2px;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		@include font(none, none, 1.3rem, 1, $color-text);
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	&__item:hover,
+	&__item.active{
+		background: #EDEDF2;
+		font-weight: 500;
+		color: $color-text;
+	}
+
+	&__nav{
+		display: inline-flex;
+		align-items: center;
+		gap: 15px;
+		height: 38px;
+		border-radius: 19px;
+		@include font(none, none, 1.3rem, 1, $color-text);
+		background: #EDEDF2;
+		padding: 0 20px;
+		cursor: pointer;
+		transition: color 0.2s ease 0s;
+
+		.icon{
+			flex-shrink: 0;
+			fill: $color-text;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__nav:hover{
+		background: #3b3b3b;
+		color: #fff;
+
+		.icon{fill: #fff;}
+	}
+
+	&__nav.disable{opacity: 0.5;}
+	&__nav:first-child{margin-right: 25px;}
+	&__nav:last-child{margin-left: 25px;}
+}

@@ -15,16 +15,12 @@ block content
 
 				p По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
 
-				//- br
-				//- br
-				//- div.h2 Доп. классы для текста
-				//- p <span class="code">text-left</span> Выравнивание текста по левому краю
-				//- p <span class="code">text-center</span> Выравнивание текста по центру
-				//- p <span class="code">text-right</span> Выравнивание текста по правому краю
-				//- p <span class="code">text-justify</span> Выравнивание текста по ширине
-				//- p <span class="code">text-uppercase</span> Все символы текста становятся прописными (верхний регистр)
-				//- p <span class="code">text-bold</span> Жирный текст
-
+				br
+				br
+				div.h2 Доп. классы для текста
+				p <span class="code">text-red</span> Красный текст
+				p <span class="code">text-green</span> Зеленый текст
+				
 				br
 				br
 				div.h2 Заголовки
@@ -69,31 +65,41 @@ block content
 
 				br
 				br
+				br
+				.h2 Нестандартный checkbox
+				label.input-check
+					input(type='checkbox')
+					span.input-check__mark
+						+svg('ic-tick','ic-tick', '8', '6')
+					span.input-check__text Текст
+
+				br
+				br
 				div.h2 Иконки
 				.type-icon
 					.type-icon__item
 						.type-icon__img
-							+svg('ic-star','ic-star ic-stroke', '20', '20')
+							+svg('ic-star','ic-star', '20', '20')
 						.type-icon__name ic-star
 
 					.type-icon__item
 						.type-icon__img
-							+svg('ic-phone','ic-phone ic-stroke', '20', '20')
+							+svg('ic-phone','ic-phone', '20', '20')
 						.type-icon__name ic-phone
 
 					.type-icon__item
 						.type-icon__img
-							+svg('ic-people','ic-people ic-stroke', '20', '20')
+							+svg('ic-people','ic-people', '20', '20')
 						.type-icon__name ic-people
 
 					.type-icon__item
 						.type-icon__img
-							+svg('ic-home','ic-home ic-stroke', '20', '20')
+							+svg('ic-home','ic-home', '20', '20')
 						.type-icon__name ic-home
 
 					.type-icon__item
 						.type-icon__img
-							+svg('ic-person','ic-person ic-stroke', '16', '22')
+							+svg('ic-person','ic-person', '16', '22')
 						.type-icon__name ic-person
 
 					.type-icon__item
@@ -160,3 +166,28 @@ block content
 						.type-icon__img
 							+svg('ic-bin','ic-bin', '12', '14')
 						.type-icon__name ic-bin
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-calendar','ic-calendar', '16', '18')
+						.type-icon__name ic-calendar
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-tick','ic-tick', '8', '8')
+						.type-icon__name ic-tick
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-close','ic-close', '10', '10')
+						.type-icon__name ic-close
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-edit','ic-edit', '20', '20')
+						.type-icon__name ic-edit
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-dots','ic-dots', '14', '2')
+						.type-icon__name ic-dots

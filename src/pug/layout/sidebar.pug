@@ -18,7 +18,7 @@ aside.sidebar(class=sidebar=='open'?'active':'')
 			each item in list
 				.sidebar-menu__item
 					.sidebar-menu__icon
-						+svg(item.icon, item.icon+' ic-stroke', item.icon_width, item.icon_height)
+						+svg(item.icon, item.icon, item.icon_width, item.icon_height)
 					.sidebar-menu__text= item.text
 
 		

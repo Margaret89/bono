@@ -14,7 +14,23 @@ body{font-size: 1.3rem;}
 	box-sizing: inherit;
 	font-size: inherit;
 	font-family: inherit;
+	scrollbar-color: rgb(172, 178, 195) rgba(242, 243, 245, 0.75);
+	scrollbar-width: thin;
 }
+
+::-webkit-scrollbar-button {
+	width:8px;
+	height:0px
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: #acb2c3
+}
+
+::-webkit-scrollbar-track{background-color:#ecedee}
+::-webkit-scrollbar-thumb:hover{background-color: #acb2c3;}
+::-webkit-scrollbar{width: 8px; height: 8px;}
 
 img{max-width: 100%;}
 
@@ -157,3 +173,54 @@ button.btn{
 
 	.icon{fill: #fff;}
 }
+
+.btn-circle{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: #000;
+	cursor: pointer;
+	transition: background 0.2s ease 0s;
+
+	.icon{fill: #fff;}
+
+	&:hover{background: #3b3b3b;}
+
+	&_big{
+		width: 40px;
+		height: 40px;
+	}
+
+	&_grey{
+		background: #F5F5F9;
+
+		.icon{fill: #000;}
+		&:hover .icon{fill: #fff;}
+	}
+}
+
+.site-shadow{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.13);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 900;
+}
+
+.code{
+	background-color: #f7f7f7;
+	border: 1px solid #e1e1e8;
+	color: #d14;
+	padding: 1px 4px;
+	display: inline-block;
+	font-family: monospace, arial;
+	border-radius: 3px;
+}
+
+.text-red{color: $color-red;}
+.text-green{color: $color-green;}
