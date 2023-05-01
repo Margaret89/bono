@@ -4,15 +4,7 @@
 	flex-shrink: 0;
 	width: 87px;
 	background: #F9F9FB;
-
-	&__logo{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-		width: 100%;
-		height: 90px;
-	}
+	transition: width 0.3s ease 0s;
 
 	&__content{
 		display: flex;
@@ -33,7 +25,7 @@
 		border-radius: 50%;
 		background: #EBEFF2;
 		margin-top: auto;
-		transition: background 0.2s ease 0s;
+		transition: background 0.2s ease 0s, transform 0.3s ease 0s;
 		cursor: pointer;
 
 		.icon{transition: stroke 0.2s ease 0s;}
@@ -46,6 +38,17 @@
 	}
 }
 
+.sidebar-logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 100%;
+	height: 90px;
+
+	&__full{display: none;}
+}
+
 .sidebar-menu{
 	display: flex;
 	flex-direction: column;
@@ -56,16 +59,58 @@
 	overflow-y: auto;
 
 	&__item{
+		display: flex;
+		align-items: center;
+		gap: 15px;
 		opacity: 0.35;
 		cursor: pointer;
 		transition: opacity 0.2s ease 0s;
-
-		.icon{fill: #000;}
-		.icon.ic-tokr{stroke: #000;}
 
 		&:hover,
 		&.active{
 			opacity: 1;
 		}
+	}
+
+	&__icon{
+		display: inline-flex;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 20px;
+
+		.icon{fill: #000;}
+		.icon.ic-stroke{stroke: #000;}
+	}
+
+	&__text{display: none;}
+}
+
+.sidebar.active{
+	width: 215px;
+
+	.sidebar-logo{
+		justify-content: flex-start;
+		padding: 0 30px;
+
+		&__full{display: block;}
+		&__short{display: none;}
+	}
+
+	.sidebar__content{
+		align-items: flex-start;
+	}
+
+	.sidebar__arr{
+		align-self: flex-end;
+		margin-right: 30px;
+		transform: rotate(180deg);
+	}
+
+	.sidebar-menu{
+		align-items: flex-start;
+		padding-left: 30px;
+		padding-right: 30px;
+
+		&__text{display: block;}
 	}
 }

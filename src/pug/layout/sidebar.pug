@@ -1,20 +1,25 @@
-aside.sidebar
-	.sidebar__logo
-		img(src="assets/img/logo.svg", alt="")
+aside.sidebar(class=sidebar=='open'?'active':'')
+	.sidebar-logo
+		.sidebar-logo__short
+			img(src="assets/img/logo.svg", alt="")
+		.sidebar-logo__full
+			img(src="assets/img/logo-full.svg", alt="")
 
 	.sidebar__content
 		.sidebar-menu
 			-
 				var list=[
-					{icon:'ic-home', icon_width:'20', icon_height:'20'},
-					{icon:'ic-star', icon_width:'20', icon_height:'20'},
-					{icon:'ic-person', icon_width:'16', icon_height:'22'},
-					{icon:'ic-phone', icon_width:'20', icon_height:'20'},
-					{icon:'ic-people', icon_width:'20', icon_height:'20'},
+					{icon:'ic-home', icon_width:'20', icon_height:'20', text:'Overview'},
+					{icon:'ic-star', icon_width:'20', icon_height:'20', text:'Campains'},
+					{icon:'ic-person', icon_width:'16', icon_height:'22', text:'Leads'},
+					{icon:'ic-phone', icon_width:'20', icon_height:'20', text:'Calls'},
+					{icon:'ic-people', icon_width:'20', icon_height:'20', text:'Users'},
 				]
 			each item in list
 				.sidebar-menu__item
-					+svg(item.icon, item.icon+' ic-stroke', item.icon_width, item.icon_height)
+					.sidebar-menu__icon
+						+svg(item.icon, item.icon+' ic-stroke', item.icon_width, item.icon_height)
+					.sidebar-menu__text= item.text
 
 		
 		.sidebar__arr
