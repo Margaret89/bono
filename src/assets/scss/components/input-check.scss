@@ -2,7 +2,7 @@
 .input-check{
 	display: inline-flex;
 	align-items: center;
-	gap: 10px;
+	gap: 12px;
 	@include font(normal, normal, 1.3rem, 1.6, none);
 	margin: 0;
 	position: relative;
@@ -34,6 +34,8 @@
 			margin: 0 auto;
 		}
 	}
+
+	.link-site:hover{text-decoration: none;}
 
 	input[type=checkbox]:checked ~ &__mark{
 		background: #000;

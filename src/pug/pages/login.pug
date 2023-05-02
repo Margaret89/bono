@@ -1,0 +1,55 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Login';
+	- var sidebar = 'hide'
+	- var header = 'hide'
+
+block content
+	.main-page
+		.main-page__content
+			.main-page__logo
+				img(src="assets/img/logo-full.svg", alt="")
+
+			.main-page__auth
+				.auth
+					.auth__title Get Started Now
+					.auth__text Enter your credentials to access your account
+
+					.auth__content
+						.btn-google
+							.btn-google__icon
+								img(src="assets/img/google.svg", alt="")
+							.btn-google__text Log in with Google
+
+						.auth__or
+							span or
+
+						.auth__item
+							.auth__label Name
+							.auth__field
+								input(type="text", placeholder="Enter your full name")
+
+						.auth__item
+							.auth__label Phone
+							.auth__field
+								input(type="text", placeholder="Enter your number phone")
+					
+					.auth__polit
+						label.input-check
+							input(type='checkbox')
+							span.input-check__mark
+								+svg('ic-tick','ic-tick', '8', '6')
+							span.input-check__text I agree to the 
+								u.link-site Terms & Privacy
+
+					.auth__btn
+						button.btn(type="submit") Sign up
+
+					.auth__links
+						span.auth__links-acc Have an account? 
+						span.auth__links-sign Sign in
+
+		.main-page__img
+			img(src="assets/img/main-info.png", alt="")
+

@@ -1,0 +1,54 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Login';
+	- var sidebar = 'hide'
+	- var header = 'hide'
+
+block content
+	.main-page
+		.main-page__content
+			.main-page__logo
+				img(src="assets/img/logo-full.svg", alt="")
+
+			.main-page__auth
+				.auth
+					.auth__title Glad you're back
+					.auth__text Enter your credentials to access your account
+
+					.auth__content
+						.btn-google
+							.btn-google__icon
+								img(src="assets/img/google.svg", alt="")
+							.btn-google__text Log in with Google
+
+						.auth__or
+							span or
+
+						.auth__item
+							.auth__label Phone
+							.auth__field
+								input(type="text", placeholder="Enter your number phone")
+
+					.auth__btn
+						button.btn(type="submit") Sign up
+
+					.auth__links
+						span.auth__links-acc Don't have a user? 
+						span.auth__links-sign Sign up
+
+		.main-page__img
+			img(src="assets/img/main-info.png", alt="")
+
+block model
+	.site-shadow
+
+	.popup-code
+		.popup-code__success
+			.popup-code__icon
+				img(src="assets/img/success.svg", alt="", style="width:135px;")
+
+			.popup-code__title Hi Osher,
+			.popup-code__text Successfully connected,
+				br
+				|you are instantly transported...

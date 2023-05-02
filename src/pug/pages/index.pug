@@ -2,32 +2,68 @@ extends ../layout/main
 
 block variables
 	- var title = 'Content';
-	- 
-		var pagelist = [
-			{href: 'sidebar-open.html',name:'Sidebar open'},
-			{href: 'campaingns.html',name:'Campaingns'},
-			{href: 'campaingns-filter.html',name:'Campaingns (filter)'},
-			{href: 'campaingns-edit.html',name:'Campaingns (edit)'},
-			{href: 'create-company.html',name:'Create company (step 1)'},
-			{href: 'create-company-active.html',name:'Create company (step 1 active)'},
-			{href: 'create-company-step2.html',name:'Create company (step 2)'},
-			{href: 'create-company-step2-popup.html',name:'Create company (step 2 popup)'},
-			{href: 'create-company-step2-res.html',name:'Create company (step 2 result)'},
-			{href: 'create-company-step3.html',name:'Create company (step 3)'},
-			{href: 'create-company-step3-res.html',name:'Create company (step 3 result)'},
-			{href: 'create-company-step4.html',name:'Create company (step 4)'},
-			{href: 'create-company-step4-select.html',name:'Create company (step 4 select)'},
-			{href: 'create-company-step4-res.html',name:'Create company (step 4 result)'},
-			{href: 'create-company-step5.html',name:'Create company (step 5)'},
-			{href: 'create-company-step5-res.html',name:'Create company (step 5 result)'},
-			{href: 'create-company-step6.html',name:'Create company (step 6)'},
-			{href: 'create-company-step6-res.html',name:'Create company (step 6 result)'},
-			{href: 'tipografika.html',name:'Typography'},
-		];
 
 block content
 	section
 		h1 Content
+
+		- 
+			var pagelist = [
+				{href: 'sidebar-open.html',name:'Sidebar open'},
+				{href: 'campaingns.html',name:'Campaingns'},
+				{href: 'campaingns-filter.html',name:'Campaingns (filter)'},
+				{href: 'campaingns-edit.html',name:'Campaingns (edit)'},
+				{href: 'create-company.html',name:'Create company (step 1)'},
+				{href: 'create-company-active.html',name:'Create company (step 1 active)'},
+				{href: 'create-company-step2.html',name:'Create company (step 2)'},
+				{href: 'create-company-step2-popup.html',name:'Create company (step 2 popup)'},
+				{href: 'create-company-step2-res.html',name:'Create company (step 2 result)'},
+				{href: 'create-company-step3.html',name:'Create company (step 3)'},
+				{href: 'create-company-step3-res.html',name:'Create company (step 3 result)'},
+				{href: 'create-company-step4.html',name:'Create company (step 4)'},
+				{href: 'create-company-step4-select.html',name:'Create company (step 4 select)'},
+				{href: 'create-company-step4-res.html',name:'Create company (step 4 result)'},
+				{href: 'create-company-step5.html',name:'Create company (step 5)'},
+				{href: 'create-company-step5-res.html',name:'Create company (step 5 result)'},
+				{href: 'create-company-step6.html',name:'Create company (step 6)'},
+				{href: 'create-company-step6-res.html',name:'Create company (step 6 result)'},
+				{href: 'tipografika.html',name:'Typography'},
+			];
+		h2 Campaingns
+		
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
+		
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'login.html',name:'Login (get started now)'},
+				{href: 'login-back.html',name:"Login (glad you're back)"},
+				{href: 'login-back-error.html',name:"Login (glad you're back error)"},
+				{href: 'login-code.html',name:'Login (verification code)'},
+				{href: 'login-code-again.html',name:'Login (verification code - send again)'},
+				{href: 'login-code-text.html',name:'Login (verification code - enter code)'},
+				{href: 'login-success.html',name:'Login (success)'},
+				
+			];
+		h2 Login + leads
+
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
+
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'tipografika.html',name:'Typography'},
+			];
+		h2 Typography
+		
 		ul
 			each page in pagelist
 				li

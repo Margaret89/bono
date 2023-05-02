@@ -10,10 +10,12 @@ html(lang='ru')
 
 	body
 		.wrapper
-			include ./sidebar
+			if(sidebar != 'hide')
+				include ./sidebar
 
 			.wrapper__content
-				include ./header
+				if(header != 'hide')
+					include ./header
 				
 				main
 					block content

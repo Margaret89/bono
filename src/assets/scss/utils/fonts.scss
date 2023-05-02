@@ -69,3 +69,21 @@
 	font-weight: 500;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: local('SF Pro Display Light Italic'), local('SFProDisplay-LightItalic'),
+		url('#{$path-fonts}/SFPro/SFProDisplay-LightItalic.woff2') format('woff2'),
+		url('#{$path-fonts}/SFPro/SFProDisplay-LightItalic.woff') format('woff');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: local('SF Pro Display Light'), local('SFProDisplay-Light'),
+		url('#{$path-fonts}/SFPro/SFProDisplay-Light.woff2') format('woff2'),
+		url('#{$path-fonts}/SFPro/SFProDisplay-Light.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+}
