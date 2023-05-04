@@ -100,23 +100,36 @@ block content
 			thead
 				tr
 					th.table-site__head.table-site__head_check
-						label.input-check
-							input(type='checkbox')
-							span.input-check__mark
-								+svg('ic-tick','ic-tick', '8', '6')
+						.table-site__head-content
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
 
-					th.table-site__head.table-site__head_id #
-					th.table-site__head Name
-					th.table-site__head Link
-					th.table-site__head Start Date
-					th.table-site__head End Date
-					th.table-site__head Lead Fee
-					th.table-site__head Sale Fee
-					th.table-site__head Leads
-					th.table-site__head Sales
-					th.table-site__head Fee From Leads
-					th.table-site__head Fee From Sales
-					th.table-site__head UTM
+					th.table-site__head.table-site__head_id
+						.table-site__head-content #
+					th.table-site__head
+						.table-site__head-content Name
+					th.table-site__head
+						.table-site__head-content Link
+					th.table-site__head
+						.table-site__head-content Start Date
+					th.table-site__head
+						.table-site__head-content End Date
+					th.table-site__head
+						.table-site__head-content Lead Fee
+					th.table-site__head
+						.table-site__head-content Sale Fee
+					th.table-site__head
+						.table-site__head-content Leads
+					th.table-site__head
+						.table-site__head-content Sales
+					th.table-site__head
+						.table-site__head-content Fee From Leads
+					th.table-site__head
+						.table-site__head-content Fee From Sales
+					th.table-site__head
+						.table-site__head-content UTM
 
 			tbody
 				-

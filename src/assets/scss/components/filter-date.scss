@@ -70,14 +70,7 @@
 		}
 	}
 
-	&:hover{background: #3b3b3b;}
-	&:hover &__content{color: #fff;}
-	&:hover &__arr{opacity: 1;}
-
-	&:hover &__content .icon,
-	&:hover &__arr .icon{
-		fill: #fff;
-	}
+	&:hover{background: #F5F5F9;}
 }
 
 .calendar{

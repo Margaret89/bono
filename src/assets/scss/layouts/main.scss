@@ -149,6 +149,11 @@ button.btn{
 		&:hover .icon{fill: #fff;}
 	}
 
+	&_border{
+		background: #fff;
+		border: 1px solid #F5F5F9;
+	}
+
 	&_opacity{
 		height: auto;
 		background: transparent;

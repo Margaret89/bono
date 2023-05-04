@@ -9,9 +9,14 @@ header.header
 			+svg('ic-arrow-down','ic-arrow-down', '11', '6')
 
 	.header__content
-		.btn.btn_green
-			+svg('ic-briefcase','ic-briefcase', '15', '15')
-			|Start shift
+		if(header_timer)
+			.timer-btn
+				+svg('ic-clock','ic-clock', '13', '13')
+				|04:40
+		else
+			.btn.btn_green
+				+svg('ic-briefcase','ic-briefcase', '15', '15')
+				|Start shift
 
 		.header-auth
 			.header-auth__img(style="background-image: url(assets/img/woman.png)")

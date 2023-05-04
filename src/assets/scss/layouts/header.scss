@@ -81,3 +81,19 @@
 
 	&__item:hover .icon{opacity: 0.5;}
 }
+
+.timer-btn{
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	height: 4.4rem;
+	border-radius: 2.2rem;
+	border: 1px solid #EFEFF4;
+	@include font(none, 500, 1.3rem, none, #000);
+	padding: 0 20px;
+
+	.icon{
+		fill: #000;
+		flex-shrink: 0;
+	}
+}

@@ -1,0 +1,50 @@
+/*-------------- select -----------------*/
+.select{
+	&__main{
+		display: inline-flex;
+		align-items: center;
+		gap: 38px;
+		height: 4.4rem;
+		border-radius: 2.2rem;
+		border: 1px solid #F5F5F9;
+		padding: 5px 20px;
+		cursor: pointer;
+		transition: background 0.2s ease 0s;
+
+		.icon{
+			fill: #000;
+			flex-shrink: 0;
+		}
+
+		&:hover{background: #F5F5F9;}
+	}
+
+	&__arr{
+		transition: transform 0.2s ease 0s;
+
+		.icon{fill: rgba(0,0,0,0.2);}
+	}
+
+	&__list{
+		display: none;
+		max-height: 200px;
+		border: 1px solid #F5F5F9;
+		border-radius: 15px;
+		background: #fff;
+		padding: 15px 10px;
+		position: absolute;
+		top: calc(100% + 5px);
+		left: 0;
+		overflow-y: auto;
+	}
+
+	&__option:not(:last-child){margin-bottom: 10px;}
+
+	&__option{
+		@include font(none, none, 1.3rem, 1.6, $color-text);
+	}
+
+	&.open &__btn{background: #F5F5F9;}
+	&.open &__arr{transform: rotate(180deg);}
+	&.open &__popup{display: inline-block;}
+}

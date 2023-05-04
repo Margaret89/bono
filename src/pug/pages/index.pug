@@ -49,7 +49,19 @@ block content
 				{href: 'login-success.html',name:'Login (success)'},
 				
 			];
-		h2 Login + leads
+		h2 Login
+
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'leads.html',name:'Leads'},
+			];
+		h2 Leads
 
 		ul
 			each page in pagelist
