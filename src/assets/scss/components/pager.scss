@@ -1,9 +1,16 @@
 /*-------------- pager -----------*/
 .pager{
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
-	gap: 2px;
+	justify-content: space-between;
+	gap: 25px;
+	
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 2px;
+	}
 
 	&__item{
 		display: inline-flex;
@@ -32,10 +39,10 @@
 		height: 38px;
 		border-radius: 19px;
 		@include font(none, none, 1.3rem, 1, $color-text);
-		background: #EDEDF2;
+		border: 1px solid #F5F5F9;
 		padding: 0 20px;
 		cursor: pointer;
-		transition: color 0.2s ease 0s;
+		transition: all 0.2s ease 0s;
 
 		.icon{
 			flex-shrink: 0;
@@ -45,13 +52,9 @@
 	}
 
 	&__nav:hover{
-		background: #3b3b3b;
-		color: #fff;
-
-		.icon{fill: #fff;}
+		background: #EDEDF2;
+		color: $color-text;
 	}
 
 	&__nav.disable{opacity: 0.5;}
-	&__nav:first-child{margin-right: 25px;}
-	&__nav:last-child{margin-left: 25px;}
 }

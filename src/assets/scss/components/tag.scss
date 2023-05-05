@@ -2,33 +2,46 @@
 .tag{
 	display: inline-flex;
 	align-items: center;
+	gap: 5px;
 	height: 2.4rem;
-	padding: 0 10px;
+	padding: 0 16px;
 	border-radius: 1.2rem;
 	border: 1px solid $color-green;
 	@include font(none, 500, 1.3rem, 1, $color-green);
 
+	.icon{fill: $color-green;}
+
 	&_red{
 		border-color: $color-red;
 		color: $color-red;
+
+		.icon{fill: $color-red;}
 	}
-}
 
-.table-company{
-	display: flex;
-	align-items: center;
-	gap: 10px;
+	&_purple{
+		border-color: $color-purple;
+		color: $color-purple;
 
-	&__img{
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-		width: 28px;
-		height: 28px;
-		border-radius: 50%;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+		.icon{fill: $color-purple;}
+	}
+
+	&_yellow{
+		border-color: $color-yellow;
+		color: $color-yellow;
+
+		.icon{fill: $color-yellow;}
+	}
+
+	&_black{
+		border-color: #000;
+		color: #000;
+
+		.icon{fill: #000;}
+	}
+
+	&_small{
+		height: 1.8rem;
+		border-radius: 0.9rem;
+		padding: 0 5px;
 	}
 }

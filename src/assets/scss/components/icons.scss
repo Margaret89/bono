@@ -15,5 +15,6 @@
 		fill: transparent;
 	}
 
-	&.ic-grey{fill: #8A919F;}
+	&.ic-grey{fill: $color-grey;}
+	&.ic-red{fill: $color-red;}
 }

@@ -308,13 +308,11 @@ block content
 								span.table-site-sort__up
 								span.table-site-sort__down
 
-					
-
 			tbody
 				-
 					var list=[
 						{
-							id:'',
+							id:'1',
 							img:'jessica.png',
 							name:'Jessica Frencheska',
 							phone:'+1 806 1239 3284',
@@ -346,6 +344,7 @@ block content
 							icon:'ic-sound',
 							icon_width:'14',
 							icon_height:'12',
+							icon_color:'ic-grey',
 							time:'20.3.2023, at 6:15 pm',
 							tooltip_icon:'ic-clock',
 							tooltip:'13:25',
@@ -368,7 +367,7 @@ block content
 							status_color:'yellow',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-calendar-close',
+							meeting_icon:'ic-calendar-close',
 							meeting_icon_width:'17',
 							meeting_icon_height:'18',
 							meeting_icon_color:'ic-red',
@@ -402,7 +401,7 @@ block content
 							status_color:'yellow',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-calendar-check',
+							meeting_icon:'ic-calendar-check',
 							meeting_icon_width:'17',
 							meeting_icon_height:'18',
 							meeting_icon_color:'ic-green',
@@ -419,7 +418,7 @@ block content
 							status_color:'purple',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -435,7 +434,7 @@ block content
 							status_color:'purple',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -454,7 +453,7 @@ block content
 							status_color:'red',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -470,7 +469,7 @@ block content
 							status_color:'red',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -486,7 +485,7 @@ block content
 							status_color:'red',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -501,7 +500,7 @@ block content
 							status:'Active',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -516,7 +515,7 @@ block content
 							status:'Active',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -526,13 +525,12 @@ block content
 							id:'13',
 							img:'keily.png',
 							name:'Keily Triump',
-							count_tooltip:'3 Leads from same client',
 							phone:'+1 806 1239 3284',
 							email:'schuppe.jany@hotmail.com',
 							status:'Active',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -542,13 +540,12 @@ block content
 							id:'14',
 							img:'jessica.png',
 							name:'Jessica Frencheska',
-							count_tooltip:'3 Leads from same client',
 							phone:'+1 806 1239 3284',
 							email:'legros.austyn@hotmail.com',
 							status:'Active',
 							source:'google.offcial',
 							time:'20.3.2023, at 6:15 pm',
-							meeting:'ic-plus-circle',
+							meeting_icon:'ic-plus-circle',
 							meeting_icon_width:'19',
 							meeting_icon_height:'19',
 							utm:'Facebook Post 4',
@@ -566,37 +563,61 @@ block content
 
 						td= item.id
 						td
-							.table-company
-								.table-company__img(style="background-image: url(assets/img/zara.png)")
-								.table-company__text= item.name
-						td= item.link
-						td= item.start
-						td= item.end
-						td= item.lead
-						td= item.sale
+							.table-name
+								.table-name__img(style=item.img?"background-image: url(assets/img/"+item.img+")":"")
+									if(item.fio)
+										=item.fio
+								.table-name__text= item.name
+
+								if(item.notice)
+									.table-name__notice
+										+svg('ic-notice-fill','ic-notice-fill ic-grey', '12', '14')
+
+								if(item.count)
+									.table-name__count= item.count
+										if(item.count_tooltip)
+											.tooltip= item.count_tooltip
+
+						td= item.phone
+						td= item.email
+
 						td
-							.tag.tag_red= item.leads
+							.tag(class=item.status_color?'tag_'+item.status_color:'')= item.status
+								if(item.status_arr)
+									+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+						td= item.source
+
 						td
-							.tag= item.sales
+							.table-date
+								if(item.icon)
+									.table-date__icon
+										+svg(item.icon, item.icon+' '+item.icon_color, item.icon_width, item.icon_height)
+										if(item.tooltip)
+											.tooltip
+												if(item.tooltip_icon)
+													+svg('ic-clock','ic-clock', '9', '9')
+												= item.tooltip
+
+								.table-date__text
+									= item.time
+
 						td
-							.text-red= item.from_leads
-						td
-							.text-green= item.from_sales
+							if(item.meeting_icon)
+								.table__icon
+									+svg(item.meeting_icon, item.meeting_icon+' '+item.meeting_icon_color, item.meeting_icon_width, item.meeting_icon_height)
+
+
+							if(item.meeting_btn)
+								.tag.tag_black.tag_small
+									+svg('ic-plus','ic-plus', '7', '7')
+									|Add
+
 						td= item.utm
 
-		.pager
-			a.pager__nav
-				+svg('ic-arr-left','ic-arr-left', '10', '8')
-				|Previous
+						td
+							.rating(class=item.rating_color?'rating_'+item.rating_color:'')
+								.rating__content(style="width:"+item.rating)
 
-			a.pager__item.active(href='#') 1
-			a.pager__item(href='#') 2
-			a.pager__item(href='#') 3
-			span.pager__item ...
-			a.pager__item(href='#') 8
-			a.pager__item(href='#') 9
-			a.pager__item(href='#') 10
 
-			a.pager__nav
-				|Next
-				+svg('ic-arr-right','ic-arr-right', '10', '8')
+		include ../components/pager

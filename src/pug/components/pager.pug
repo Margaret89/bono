@@ -1,0 +1,17 @@
+.pager
+	a.pager__nav
+		+svg('ic-arr-left','ic-arr-left', '10', '8')
+		|Previous
+
+	.pager__list
+		a.pager__item.active(href='#') 1
+		a.pager__item(href='#') 2
+		a.pager__item(href='#') 3
+		span.pager__item ...
+		a.pager__item(href='#') 8
+		a.pager__item(href='#') 9
+		a.pager__item(href='#') 10
+
+	a.pager__nav
+		|Next
+		+svg('ic-arr-right','ic-arr-right', '10', '8')
