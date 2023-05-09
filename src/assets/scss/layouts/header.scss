@@ -96,4 +96,10 @@
 		fill: #000;
 		flex-shrink: 0;
 	}
+
+	&__end{
+		font-weight: 500;
+		color: $color-red;
+		margin-left: 18px;
+	}
 }

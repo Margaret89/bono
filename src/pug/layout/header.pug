@@ -13,6 +13,8 @@ header.header
 			.timer-btn
 				+svg('ic-clock','ic-clock', '13', '13')
 				|04:40
+				if(filter_stop)
+					.timer-btn__end End shift
 		else
 			.btn.btn_green
 				+svg('ic-briefcase','ic-briefcase', '15', '15')

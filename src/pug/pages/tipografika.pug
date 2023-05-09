@@ -60,6 +60,16 @@ block content
 					|Кнопка
 				br
 				br
+				a.btn.btn_grey(href='#')
+					+svg('ic-briefcase','ic-briefcase', '15', '15')
+					|Кнопка
+				br
+				br
+				a.btn.btn_red(href='#')
+					+svg('ic-briefcase','ic-briefcase', '15', '15')
+					|Кнопка
+				br
+				br
 				a.btn.btn_border(href='#')
 					+svg('ic-briefcase','ic-briefcase', '15', '15')
 					|Кнопка
@@ -71,6 +81,12 @@ block content
 
 				br
 				br
+				div(style="background: #000; padding: 20px")
+					a.btn.btn_white(href='#')
+						+svg('ic-briefcase','ic-briefcase', '15', '15')
+						|Кнопка
+				br
+				br
 				br
 				.h2 Нестандартный checkbox
 				label.input-check
@@ -79,6 +95,53 @@ block content
 						+svg('ic-tick','ic-tick', '8', '6')
 					span.input-check__text Текст
 
+				br
+				br
+				br
+				.h2 Табуляция
+				.tabs-page
+					ul.tabs-page__list
+						li.tabs-page__item.active(data-item='tab1') Tab1
+						li.tabs-page__item(data-item='tab2') Tab2
+						li.tabs-page__item(data-item='tab3') Tab3
+						li.tabs-page__item(data-item='tab4') Tab4
+						
+					.tabs-page__content
+						#tab1.tabs-page__content-item.active Text 1
+						#tab2.tabs-page__content-item Text 2
+						#tab3.tabs-page__content-item Text 3
+						#tab4.tabs-page__content-item Text 4
+
+				br
+				br
+				br
+				.h2 Теги
+				.tag Text
+				br
+				br
+				.tag.tag_red Text
+				br
+				br
+				.tag.tag_purple Text
+				br
+				br
+				.tag.tag_yellow Text
+				br
+				br
+				.tag.tag_black Text
+				br
+				br
+				.tag.tag.tag_small Text
+
+				br
+				br
+				.h2 Switch
+				.switch
+					input(type="checkbox", id="switch1")
+					label.switch__content(for="switch1")
+						.switch__marker
+
+					.switch__text Text
 				br
 				br
 				div.h2 Иконки
@@ -210,6 +273,11 @@ block content
 
 					.type-icon__item
 						.type-icon__img
+							+svg('ic-edit-line','ic-edit-line', '20', '21')
+						.type-icon__name ic-edit-line
+
+					.type-icon__item
+						.type-icon__img
 							+svg('ic-dots','ic-dots', '14', '2')
 						.type-icon__name ic-dots
 
@@ -287,3 +355,88 @@ block content
 						.type-icon__img
 							+svg('ic-plus-circle','ic-plus-circle', '19', '19')
 						.type-icon__name ic-plus-circle
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-user','ic-user', '18', '21')
+						.type-icon__name ic-user
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-mail','ic-mail', '22', '19')
+						.type-icon__name ic-mail
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-send-mail','ic-send-mail', '16', '14')
+						.type-icon__name ic-send-mail
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-send','ic-send', '17', '17')
+						.type-icon__name ic-send
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-15-prev','ic-15-prev', '19', '22')
+						.type-icon__name ic-15-prev
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-15-next','ic-15-next', '19', '22')
+						.type-icon__name ic-15-next
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-review','ic-review', '19', '19')
+						.type-icon__name ic-review
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-volume','ic-volume', '24', '17')
+						.type-icon__name ic-volume
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-pause','ic-pause', '10', '15')
+						.type-icon__name ic-pause
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-play','ic-play', '11', '14')
+						.type-icon__name ic-play
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-move-to','ic-move-to', '18', '14')
+						.type-icon__name ic-move-to
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-export','ic-export', '16', '16')
+						.type-icon__name ic-export
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-print','ic-print', '18', '19')
+						.type-icon__name ic-print
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-archive','ic-archive', '18', '18')
+						.type-icon__name ic-archive
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-spiral','ic-spiral', '17', '17')
+						.type-icon__name ic-spiral
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-write','ic-write', '15', '17')
+						.type-icon__name ic-write
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-file','ic-file', '12', '15')
+						.type-icon__name ic-file

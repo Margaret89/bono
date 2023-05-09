@@ -8,6 +8,12 @@ body{
 
 body{font-size: 1.3rem;}
 
+body.no-scroll{
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -133,11 +139,16 @@ button.btn{
 		color: #0FAD68;
 
 		.icon{fill: #0FAD68;}
+
+		&:hover{
+			background: rgba(15,173,104,0.15);
+			color: #0FAD68;
+		}
 	}
 
-	&_green:hover{
-		background: rgba(15,173,104,0.15);
-		color: #0FAD68;
+	&_red{
+		background: $color-red;
+		&:hover{background: #f73643;}
 	}
 
 	&_grey{
@@ -152,6 +163,19 @@ button.btn{
 	&_border{
 		background: #fff;
 		border: 1px solid #F5F5F9;
+		color: #000;
+
+		.icon{fill: #000;}
+		
+		&:hover{
+			color: #000;
+			background: #F5F5F9;
+		}
+	}
+
+	&_white{
+		background: rgba(255,255,255,0.15);
+		color: #fff;
 	}
 
 	&_opacity{
@@ -167,6 +191,12 @@ button.btn{
 			color: #8A919F;
 			.icon{fill: #8A919F;}
 		}
+	}
+
+	&_small{
+		height: 2.6rem;
+		border-radius: 1.3rem;
+		padding: 0 12px;
 	}
 }
 
@@ -204,6 +234,14 @@ button.btn{
 
 		.icon{fill: #000;}
 		&:hover .icon{fill: #fff;}
+	}
+
+	&_opacity{
+		background: transparent;
+
+		.icon{fill: #000;}
+		&:hover{background: #F5F5F9;}
+		&:hover .icon{fill: #000;}
 	}
 }
 

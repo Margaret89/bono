@@ -1,0 +1,684 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Leads';
+	- var sidebar = 'open';
+	- var header_timer = '04:40';
+
+block content
+	section.page-top
+		.page-top__col
+			h1 Leads
+
+			.page-top__text The list contains 3,021 leads
+
+			.select
+				.select__main
+					| Google TV campain
+					.select__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+				.select__list
+					.select__option Parametr 1
+					.select__option Parametr 2
+					.select__option Parametr 3
+
+		.page-top__col
+			form.form-search
+				input(type="text", name="search", placeholder="Search")
+				button.form-search__btn(type="submit")
+					+svg('ic-search','ic-search', '15', '15')
+
+			.select-check.select-check_right
+				.select-check__field
+					.select-check__info
+						+svg('ic-column','ic-column', '15', '15')
+						|Columns
+
+					.select-check__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+					.select-check__popup
+						-
+							var list=[
+								{text:'Lead Name', status:'active'},
+								{text:'Campain Name'},
+								{text:'Affiliator Name'},
+								{text:'Phone', status:'active'},
+								{text:'Email', status:'active'},
+								{text:'Status', status:'active'},
+								{text:'Campain Name'},
+								{text:'Affiliator Name'},
+								{text:'Phone', status:'active'},
+							]
+						each item in list
+							.select-check__item
+								label.input-check
+									if(item.status=='active')
+										input(type='checkbox', checked="checked")
+									else
+										input(type='checkbox')
+									span.input-check__mark
+										+svg('ic-tick','ic-tick', '8', '6')
+									span.input-check__text= item.text
+
+			.filter.filter_right
+				.filter__btn
+					+svg('ic-filter','ic-filter', '18', '16')
+					.filter__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+				.filter__popup
+					.filter__list
+						-
+							var list=[
+								{
+									title: 'Source',
+									items:[
+										{text:'Google.offcial', status:'active'},
+										{text:'Google.fb'},
+										{text:'Google.ig'},
+										{text:'Google.tt'},
+									]
+								},
+								{
+									title: 'Status',
+									items:[
+										{text:'Active', status:'active'},
+										{text:'Waiting'},
+										{text:'Pause'},
+										{text:'Decline'},
+									]
+								},
+								{
+									title: 'Meeting',
+									items:[
+										{text:'Google.offcial', status:'active'},
+										{text:'Google.fb'},
+									]
+								},
+								{
+									title: 'UTM',
+									items:[
+										{text:'Active'},
+										{text:'Waiting'},
+									]
+								},
+							]
+						each sect in list
+							.filter__sect
+								.filter__title= sect.title
+
+								each item in sect.items
+									.filter__item
+										label.input-check
+											if(item.status=='active')
+												input(type='checkbox', checked="checked")
+											else
+												input(type='checkbox')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '8', '6')
+											span.input-check__text= item.text
+
+					.filter__bottom
+						span.btn.btn_border
+							+svg('ic-clear','ic-clear', '19', '19')
+							|Clear All
+
+						span.btn.btn_border
+							|Apply
+							+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+			.view
+				.view__item
+					+svg('ic-tile','ic-tile', '12', '12')
+				.view__item.active
+					+svg('ic-lines','ic-lines', '12', '12')
+
+			.filter-date
+				.filter-date-btn
+					span.filter-date-btn__content
+						+svg('ic-calendar','ic-calendar', '16', '18')
+						span.filter-date-btn__text Filter by date
+
+					span.filter-date-btn__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+				.filter-date__popup
+					.calendar
+						.calendar-period
+							-
+								var list=[
+									{text:'Custom', status:'active'},
+									{text:'Today'},
+									{text:'Yesterday'},
+									{text:'This week'},
+									{text:'Last week'},
+									{text:'This month'},
+									{text:'Last month'},
+									{text:'Alll time'},
+								]
+							each item in list
+								.calendar-period__item(class=item.status?'active':'')= item.text
+
+						.calendar-main
+							.calendar-main__top
+								.calendar-main__title December 2023
+
+								.calendar-main__arrows
+									.calendar-main__arr
+										+svg('ic-arrow-left','ic-arrow-left', '6', '11')
+
+									.calendar-main__arr
+										+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+							.calendar-main__content
+								.calendar-main__label S
+								.calendar-main__label M 
+								.calendar-main__label T
+								.calendar-main__label W
+								.calendar-main__label T
+								.calendar-main__label F
+								.calendar-main__label S
+								.calendar-main__item.disabled 27
+								.calendar-main__item.disabled 28
+								.calendar-main__item.disabled 29
+								.calendar-main__item.disabled 30
+								.calendar-main__item 1
+								.calendar-main__item 2
+								.calendar-main__item 3
+								.calendar-main__item 4
+								.calendar-main__item 5
+								.calendar-main__item.active 6
+								.calendar-main__item.selected 7
+								.calendar-main__item.selected 8
+								.calendar-main__item.selected 9
+								.calendar-main__item.selected 10
+								.calendar-main__item.selected 11
+								.calendar-main__item.selected 12
+								.calendar-main__item.selected 13
+								.calendar-main__item.selected 14
+								.calendar-main__item.active 15
+								.calendar-main__item 16
+								.calendar-main__item 17
+								.calendar-main__item 18
+								.calendar-main__item 19
+								.calendar-main__item 20
+								.calendar-main__item 21
+								.calendar-main__item 22
+								.calendar-main__item 23
+								.calendar-main__item 24
+								.calendar-main__item 25
+								.calendar-main__item 26
+								.calendar-main__item 27
+								.calendar-main__item 28
+								.calendar-main__item 29
+								.calendar-main__item 30
+								.calendar-main__item 31
+
+			.btn-circle.btn-circle_big
+				+svg('ic-plus','ic-plus', '12', '12')
+
+	section.table-site-wrap
+		table.table-site
+			thead
+				tr
+					th.table-site__head.table-site__head_check
+						.table-site__head-content
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+
+					th.table-site__head.table-site__head_id
+						.table-site__head-content
+							| #
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							|Name
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							+svg('ic-many-dots','ic-many-dots ic-grey', '6', '10')
+							|Phone
+							span.table-site-sort
+								span.table-site-sort__up.active
+								span.table-site-sort__down
+
+							.table-site__del
+								+svg('ic-bin','ic-bin', '9', '10')
+
+								.tooltip Remove
+									
+
+					th.table-site__head
+						.table-site__head-content
+							|Email
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							|Status
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							|Source
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							|Date & Time
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							|Meeting
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							|UTM
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+					th.table-site__head
+						.table-site__head-content
+							+svg('ic-star-fill','ic-star-fill ic-grey', '10', '10')
+
+							span.table-site-sort
+								span.table-site-sort__up
+								span.table-site-sort__down
+
+			tbody
+				-
+					var list=[
+						{
+							id:'1',
+							img:'jessica.png',
+							name:'Jessica Frencheska',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							source:'google.offcial',
+							icon:'ic-missed-call',
+							icon_width:'12',
+							icon_height:'12',
+							icon_color:'ic-red',
+							time:'20.3.2023, at 6:15 pm',
+							tooltip:'Missed Call',
+							meeting_icon:'ic-eye',
+							meeting_icon_width:'16',
+							meeting_icon_height:'14',
+							meeting_icon_color:'ic-grey',
+							utm:'Facebook Post 4',
+							rating:'66%'
+						},
+						{
+							id:'2',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Waiting',
+							status_color:'purple',
+							source:'google.offcial',
+							icon:'ic-sound',
+							icon_width:'14',
+							icon_height:'12',
+							icon_color:'ic-grey',
+							time:'20.3.2023, at 6:15 pm',
+							tooltip_icon:'ic-clock',
+							tooltip:'13:25',
+							meeting_icon:'ic-eye-close',
+							meeting_icon_width:'18',
+							meeting_icon_height:'18',
+							meeting_icon_color:'ic-grey',
+							utm:'Facebook Post 4',
+							rating:'100%'
+						},
+						{
+							id:'3',
+							img:'keily.png',
+							name:'Keily Triump',
+							count:'3',
+							count_tooltip:'3 Leads from same client',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Pause',
+							status_color:'yellow',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-calendar-close',
+							meeting_icon_width:'17',
+							meeting_icon_height:'18',
+							meeting_icon_color:'ic-red',
+							utm:'Facebook Post 4',
+							rating:'100%'
+						},
+						{
+							id:'4',
+							fio:'EE',
+							name:'Eran Eluz',
+							notice:'true',
+							count:'3',
+							count_tooltip:'3 Leads from same client',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Pause',
+							status_color:'yellow',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_btn:'true',
+							utm:'Facebook Post 4',
+							rating:'100%'
+						},
+						{
+							id:'5',
+							fio:'JR',
+							name:'Jerry Ronie',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Pause',
+							status_color:'yellow',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-calendar-check',
+							meeting_icon_width:'17',
+							meeting_icon_height:'18',
+							meeting_icon_color:'ic-green',
+							utm:'Facebook Post 4',
+							rating:'100%'
+						},
+						{
+							id:'6',
+							fio:'AA',
+							name:'Ali Abuzark',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Waiting',
+							status_color:'purple',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'100%'
+						},
+						{
+							id:'7',
+							fio:'OC',
+							name:'Osher Cohen',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Waiting',
+							status_color:'purple',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'66%',
+							rating_color:'grey'
+						},
+						{
+							id:'8',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							notice:'true',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Decline',
+							status_arr:'true',
+							status_color:'red',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%'
+						},
+						{
+							id:'9',
+							fio:'EP',
+							name:'Eyal Poipembuilm',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Decline',
+							status_color:'red',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%',
+						},
+						{
+							id:'10',
+							fio:'GJ',
+							name:'Grifin Jeck',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Decline',
+							status_color:'red',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%',
+						},
+						{
+							id:'11',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Active',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%'
+						},
+						{
+							id:'12',
+							fio:'ZV',
+							name:'Zoei Valorent',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Active',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%',
+						},
+						{
+							id:'13',
+							img:'keily.png',
+							name:'Keily Triump',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Active',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%',
+						},
+						{
+							id:'14',
+							img:'jessica.png',
+							name:'Jessica Frencheska',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							source:'google.offcial',
+							time:'20.3.2023, at 6:15 pm',
+							meeting_icon:'ic-plus-circle',
+							meeting_icon_width:'19',
+							meeting_icon_height:'19',
+							utm:'Facebook Post 4',
+							rating:'0%',
+						},
+						
+					]
+				each item in list
+					tr
+						td
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+
+						td= item.id
+						td
+							.table-name
+								.table-name__img(style=item.img?"background-image: url(assets/img/"+item.img+")":"")
+									if(item.fio)
+										=item.fio
+								.table-name__text= item.name
+
+								if(item.notice)
+									.table-name__notice
+										+svg('ic-notice-fill','ic-notice-fill ic-grey', '12', '14')
+
+								if(item.count)
+									.table-name__count= item.count
+										if(item.count_tooltip)
+											.tooltip= item.count_tooltip
+
+						td= item.phone
+						td= item.email
+
+						td
+							.tag(class=item.status_color?'tag_'+item.status_color:'')= item.status
+								if(item.status_arr)
+									+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+						td= item.source
+
+						td
+							.table-date
+								if(item.icon)
+									.table-date__icon
+										+svg(item.icon, item.icon+' '+item.icon_color, item.icon_width, item.icon_height)
+										if(item.tooltip)
+											.tooltip
+												if(item.tooltip_icon)
+													+svg('ic-clock','ic-clock', '9', '9')
+												= item.tooltip
+
+								.table-date__text
+									= item.time
+
+						td
+							if(item.meeting_icon)
+								.table__icon
+									+svg(item.meeting_icon, item.meeting_icon+' '+item.meeting_icon_color, item.meeting_icon_width, item.meeting_icon_height)
+
+
+							if(item.meeting_btn)
+								.tag.tag_black.tag_small
+									+svg('ic-plus','ic-plus', '7', '7')
+									|Add
+
+						td= item.utm
+
+						td
+							.rating(class=item.rating_color?'rating_'+item.rating_color:'')
+								.rating__content(style="width:"+item.rating)
+
+
+		include ../components/pager
+
+block model
+	.site-shadow
+
+	.modal-main
+		.modal-main__close
+			.btn-circle.btn-circle_grey
+				+svg('ic-close','ic-close', '10', '10')
+
+		.modal-main__title Call back
+
+		form.form-site
+			.form-site__content
+				.form-site__item
+					input(type="text", name="title", placeholder="Meeting title", value="Call Tania +972-55-222-6266")
+
+				.form-site__item.form-site__item_sb
+					.switch
+						input(type="checkbox", id="switch1", checked="checked")
+						label.switch__content(for="switch1")
+							.switch__marker
+
+						.switch__text Remind me
+
+					.time-label
+						+svg('ic-clock','ic-clock', '13', '13')
+						|In 15 minutes
+
+				.form-site__item.form-site__item_half
+					label.input-date
+						input(type="date", value="2 December", disabled="disabled")
+
+						.input-date__field Today
+							.input-date__icon
+								+svg('ic-calendar','ic-calendar', '16', '18')
+
+				.form-site__item.form-site__item_half
+					.input-time
+						input(type="time", disabled="disabled", value="10:15")
+						.input-time__icon
+							+svg('ic-clock','ic-clock', '15', '15')
+
+
+				.form-site-add
+					.form-site-add__item
+						input(type="text", placeholder="Forward reminder")
+						.btn-circle.btn-circle_grey
+							+svg('ic-plus','ic-plus', '10', '10')
+
+					.form-site-add__item
+						textarea(placeholder="Checked signed documents")
+
+					label.input-check
+						input(type='checkbox')
+						span.input-check__mark
+							+svg('ic-tick','ic-tick', '8', '6')
+						span.input-check__text Send message to lead?
+
+			.form-site__btn
+				button.btn
+					|Create

@@ -183,61 +183,62 @@ block model
 			.btn-circle.btn-circle_grey
 				+svg('ic-close','ic-close', '10', '10')
 
-			.btn-circle.btn-circle_grey.btn_big
-				+svg('ic-dots','ic-dots', '14', '2')
+			.modal__actions
+				.btn-circle.btn-circle_grey.btn_big
+					+svg('ic-dots','ic-dots', '14', '2')
 			
 		.modal__content
-			.profile-edit
-				.profile-edit__main
-					.profile-edit__img(style="background-image: url(assets/img/zara.png)")
+			.profile-info
+				.profile-info__main
+					.profile-info__img(style="background-image: url(assets/img/zara.png)")
 					
-					.profile-edit__name ZARA
-						.profile-edit__name-edit
+					.profile-info__name ZARA
+						.profile-info__name-edit
 							+svg('ic-edit','ic-edit', '20', '20')
-					.profile-edit__id ID: 34567890
+					.profile-info__id ID: 34567890
 
-				.profile-edit__content
-					.profile-edit__sect
-						.profile-edit__top
-							.profile-edit__title Link Sources
+				.profile-info__content
+					.profile-info__sect
+						.profile-info__top
+							.profile-info__title Link Sources
 
-						.profile-edit-params
-							.profile-edit-params__sect
-								.profile-edit-params__item
-									.profile-edit-params__label Link
-									.profile-edit-params__val
+						.profile-info-params
+							.profile-info-params__sect
+								.profile-info-params__item
+									.profile-info-params__label Link
+									.profile-info-params__val
 										a(href="https://bit.ly/campain=312=affilator4") https://bit.ly/campain=312=affilator4
 									
-								.profile-edit-params__item
-									.profile-edit-params__label UTM
-									.profile-edit-params__val Facebook Post 4
+								.profile-info-params__item
+									.profile-info-params__label UTM
+									.profile-info-params__val Facebook Post 4
 
-							.profile-edit-params__sect
-								.profile-edit-params__item
-									.profile-edit-params__label Link
-									.profile-edit-params__val
+							.profile-info-params__sect
+								.profile-info-params__item
+									.profile-info-params__label Link
+									.profile-info-params__val
 										a(href="https://bit.ly/campain=312=affilator4") https://bit.ly/campain=312=affilator4
 									
-								.profile-edit-params__item
-									.profile-edit-params__label UTM
-									.profile-edit-params__val Facebook Post 4
+								.profile-info-params__item
+									.profile-info-params__label UTM
+									.profile-info-params__val Facebook Post 4
 					
-					.profile-edit__sect
-						.profile-edit__top
-							.profile-edit__title-wrap
-								.profile-edit__title Users
+					.profile-info__sect
+						.profile-info__top
+							.profile-info__title-wrap
+								.profile-info__title Users
 
-								.profile-edit-users
-									.profile-edit-users__icon
+								.profile-info-users
+									.profile-info-users__icon
 										+svg('ic-people','ic-people', '20', '20')
-									.profile-edit-users__num 12
+									.profile-info-users__num 12
 
 							.btn-circle.btn-circle_grey
 								+svg('ic-arrow-right','ic-arrow-right', '6', '11')
 					
-					.profile-edit__sect
-						.profile-edit__top
-							.profile-edit__title Tags
+					.profile-info__sect
+						.profile-info__top
+							.profile-info__title Tags
 							
 							.btn-circle.btn-circle_grey
 								+svg('ic-plus','ic-plus', '12', '12')
@@ -260,13 +261,13 @@ block model
 									.tag-item__del
 										+svg('ic-minus','ic-minus', '7', '1')
 
-					.profile-edit__sect
-						.profile-edit__top
-							.profile-edit__title Note
+					.profile-info__sect
+						.profile-info__top
+							.profile-info__title Note
 							
 							.btn-circle.btn-circle_grey
 								+svg('ic-edit','ic-edit', '14', '14')
 
-						.profile-edit__note Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and search for 'lorem ipsum'will uncover many web sites still in their infancy
+						.profile-info__note Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and search for 'lorem ipsum'will uncover many web sites still in their infancy
 
 							
