@@ -1,12 +1,36 @@
 header.header
-	.google-acc
-		.google-acc__icon
-			img(src="assets/img/google_plus.svg", alt="")
+	.choose-acc
+		.choose-acc__top
+			.choose-acc__img(style="background-image: url(assets/img/google_plus.svg)")
 
-		.google-acc__text Google
+			.choose-acc__text Google
 
-		.google-acc__arr
-			+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+			.choose-acc__arr
+				+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+			
+		.choose-acc-popup
+			.choose-acc-popup__search
+				input(type="text", placeholder="Search")
+				+svg('ic-search','ic-search', '15', '15')
+
+			-
+				var list=[
+					{img:'google_plus.svg', title:'Google', mail:'googleplus@gmail.com', status:'active'},
+					{img:'zara.png', title:'Zara', mail:'info@zara.com'},
+					{img:'google_plus.svg', title:'Google', mail:'googleplus@gmail.com'},
+					{img:'google_plus.svg', title:'Google', mail:'googleplus@gmail.com'},
+				]
+			each item in list
+				.choose-acc-popup__item(class=item.status?'active':'')
+					.choose-acc-popup__content
+						.choose-acc-popup__img(style="background-image: url(assets/img/"+item.img+")")
+
+						.choose-acc-popup__info
+							.choose-acc-popup__title= item.title
+							.choose-acc-popup__mail= item.mail
+
+					.choose-acc-popup__check
+						+svg('ic-tick','ic-tick', '8', '6')
 
 	.header__content
 		if(header_timer)
@@ -20,7 +44,7 @@ header.header
 				+svg('ic-briefcase','ic-briefcase', '15', '15')
 				|Start shift
 
-		.header-auth
+		.header-auth(class=auth?'open':'')
 			.header-auth__img(style="background-image: url(assets/img/woman.png)")
 
 			.header-auth__info
@@ -29,6 +53,14 @@ header.header
 
 			.header-auth__arr
 				+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+			.header-auth__popup
+				.header-auth__item Edit profile
+				.header-auth__item My shifts
+				.header-auth__item Settings
+				.header-auth__exit
+					+svg('ic-logout','ic-logout', '16', '16')
+					|Logout
 
 		.header-action
 			.header-action__item
