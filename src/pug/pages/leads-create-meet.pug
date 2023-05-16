@@ -632,79 +632,80 @@ block model
 
 		.modal-main__title Create a meeting
 
-		form.form-site
-			.form-site__content
-				.form-site__item
-					input(type="text", name="title", placeholder="Meeting title")
+		.modal-main__content
+			form.form-site
+				.form-site__content
+					.form-site__item
+						input(type="text", name="title", placeholder="Meeting title")
 
-				.form-site__item
-					.switch
-						input(type="checkbox", id="switch1")
-						label.switch__content(for="switch1")
-							.switch__marker
+					.form-site__item
+						.switch
+							input(type="checkbox", id="switch1")
+							label.switch__content(for="switch1")
+								.switch__marker
 
-						.switch__text All day
+							.switch__text All day
 
-				.form-site__item.form-site__item_half
-					.form-site__label Start
-					label.input-date
-						input(type="date", value="2 December")
+					.form-site__item.form-site__item_half
+						.form-site__label Start
+						label.input-date
+							input(type="date", value="2 December")
 
-						.input-date__field 2 December
-							.input-date__icon
-								+svg('ic-calendar','ic-calendar', '16', '18')
+							.input-date__field 2 December
+								.input-date__icon
+									+svg('ic-calendar','ic-calendar', '16', '18')
 
-					.input-time
-						input(type="time", disabled="disabled")
-						.input-time__icon
-							+svg('ic-clock','ic-clock', '15', '15')
+						.input-time
+							input(type="time", disabled="disabled")
+							.input-time__icon
+								+svg('ic-clock','ic-clock', '15', '15')
 
-				.form-site__item.form-site__item_half
-					.form-site__label End
-					label.input-date
-						input(type="date", value="2 December")
+					.form-site__item.form-site__item_half
+						.form-site__label End
+						label.input-date
+							input(type="date", value="2 December")
 
-						.input-date__field 2 December
-							.input-date__icon
-								+svg('ic-calendar','ic-calendar', '16', '18')
+							.input-date__field 2 December
+								.input-date__icon
+									+svg('ic-calendar','ic-calendar', '16', '18')
 
-					.input-time
-						input(type="time", disabled="disabled")
-						.input-time__icon
-							+svg('ic-clock','ic-clock', '15', '15')
+						.input-time
+							input(type="time", disabled="disabled")
+							.input-time__icon
+								+svg('ic-clock','ic-clock', '15', '15')
 
-				.form-site__item.form-site__item_sb
-					.switch
-						input(type="checkbox", id="switch1", checked="checked")
-						label.switch__content(for="switch1")
-							.switch__marker
+					.form-site__item.form-site__item_sb
+						.switch
+							input(type="checkbox", id="switch1", checked="checked")
+							label.switch__content(for="switch1")
+								.switch__marker
 
-						.switch__text Remind me
+							.switch__text Remind me
 
-					.time-label
-						+svg('ic-clock','ic-clock', '13', '13')
-						|2 Hours before
+						.time-label
+							+svg('ic-clock','ic-clock', '13', '13')
+							|2 Hours before
 
-				.form-site-add
-					.form-site-add__item
-						input(type="text", placeholder="Invite pepole")
-						.btn-circle.btn-circle_grey
-							+svg('ic-plus','ic-plus', '10', '10')
+					.form-site-add
+						.form-site-add__item
+							input(type="text", placeholder="Invite pepole")
+							.btn-circle.btn-circle_grey
+								+svg('ic-plus','ic-plus', '10', '10')
 
-					.form-site-add__item
-						input(type="text", placeholder="Add location")
+						.form-site-add__item
+							input(type="text", placeholder="Add location")
 
-					.form-site-add__item
-						input(type="text", placeholder="Add comments")
+						.form-site-add__item
+							input(type="text", placeholder="Add comments")
 
-					.file-upload
-						label.file-upload__content
-							input(type='file', name='file')
+						.file-upload
+							label.file-upload__content
+								input(type='file', name='file')
 
-							span.file-upload__icon
-								+svg('ic-spiral','ic-spiral', '17', '17')
-							span.file-upload__text Attach file
+								span.file-upload__icon
+									+svg('ic-spiral','ic-spiral', '17', '17')
+								span.file-upload__text Attach file
 
-			.form-site__btn
-				button.btn
-					|Create
+				.form-site__btn
+					button.btn
+						|Create

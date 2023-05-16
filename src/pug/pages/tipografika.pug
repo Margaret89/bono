@@ -75,6 +75,11 @@ block content
 					|Кнопка
 				br
 				br
+				a.btn.btn_border-dark(href='#')
+					+svg('ic-briefcase','ic-briefcase', '15', '15')
+					|Кнопка
+				br
+				br
 				button.btn(type="submit", href='#', disabled="disabled")
 					+svg('ic-briefcase','ic-briefcase', '15', '15')
 					|Кнопка
@@ -83,6 +88,13 @@ block content
 				br
 				div(style="background: #000; padding: 20px")
 					a.btn.btn_white(href='#')
+						+svg('ic-briefcase','ic-briefcase', '15', '15')
+						|Кнопка
+
+					br
+					br
+
+					a.btn.btn_white-fill(href='#')
 						+svg('ic-briefcase','ic-briefcase', '15', '15')
 						|Кнопка
 				br
@@ -445,3 +457,13 @@ block content
 						.type-icon__img
 							+svg('ic-logout','ic-logout', '16', '16')
 						.type-icon__name ic-logout
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-chat','ic-chat', '15', '15')
+						.type-icon__name ic-chat
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-check','ic-check', '17', '9')
+						.type-icon__name ic-check

@@ -10,6 +10,7 @@ block content
 		- 
 			var pagelist = [
 				{href: 'sidebar-open.html',name:'Sidebar open'},
+				{href: 'header-popups.html',name:'Header open popups'},
 				{href: 'campaingns.html',name:'Campaingns'},
 				{href: 'campaingns-filter.html',name:'Campaingns (filter)'},
 				{href: 'campaingns-edit.html',name:'Campaingns (edit)'},
@@ -75,6 +76,38 @@ block content
 				{href: 'leads-call-back-full.html',name:'Leads (call back full)'},
 			];
 		h2 Leads
+
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
+		
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'pfofile-woman.html',name:'Pfofile woman'},
+				{href: 'pfofile-man.html',name:'Pfofile man'},
+				{href: 'notification.html',name:'Notification'},
+				{href: 'notification2.html',name:'Notification 2'},
+				{href: 'notification3.html',name:'Notification 3'},
+			];
+		h2 Profile and notification
+
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
+		
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'users.html',name:'Users'},
+				{href: 'users-add.html',name:'Add user'},
+				{href: 'users-edit.html',name:'Edit user'},
+			];
+		h2 Users
 
 		ul
 			each page in pagelist

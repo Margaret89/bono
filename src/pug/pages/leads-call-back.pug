@@ -631,54 +631,55 @@ block model
 				+svg('ic-close','ic-close', '10', '10')
 
 		.modal-main__title Call back
+		
+		.modal-main__content
+			form.form-site
+				.form-site__content
+					.form-site__item
+						input(type="text", name="title", placeholder="Meeting title", value="Call Tania +972-55-222-6266")
 
-		form.form-site
-			.form-site__content
-				.form-site__item
-					input(type="text", name="title", placeholder="Meeting title", value="Call Tania +972-55-222-6266")
+					.form-site__item.form-site__item_sb
+						.switch
+							input(type="checkbox", id="switch1", checked="checked")
+							label.switch__content(for="switch1")
+								.switch__marker
 
-				.form-site__item.form-site__item_sb
-					.switch
-						input(type="checkbox", id="switch1", checked="checked")
-						label.switch__content(for="switch1")
-							.switch__marker
+							.switch__text Remind me
 
-						.switch__text Remind me
+						.time-label
+							+svg('ic-clock','ic-clock', '13', '13')
+							|In 15 minutes
 
-					.time-label
-						+svg('ic-clock','ic-clock', '13', '13')
-						|In 15 minutes
+					.form-site__item.form-site__item_half
+						label.input-date
+							input(type="date", value="2 December", disabled="disabled")
 
-				.form-site__item.form-site__item_half
-					label.input-date
-						input(type="date", value="2 December", disabled="disabled")
+							.input-date__field Today
+								.input-date__icon
+									+svg('ic-calendar','ic-calendar', '16', '18')
 
-						.input-date__field Today
-							.input-date__icon
-								+svg('ic-calendar','ic-calendar', '16', '18')
-
-				.form-site__item.form-site__item_half
-					.input-time
-						input(type="time", disabled="disabled", value="10:15")
-						.input-time__icon
-							+svg('ic-clock','ic-clock', '15', '15')
+					.form-site__item.form-site__item_half
+						.input-time
+							input(type="time", disabled="disabled", value="10:15")
+							.input-time__icon
+								+svg('ic-clock','ic-clock', '15', '15')
 
 
-				.form-site-add
-					.form-site-add__item
-						input(type="text", placeholder="Forward reminder")
-						.btn-circle.btn-circle_grey
-							+svg('ic-plus','ic-plus', '10', '10')
+					.form-site-add
+						.form-site-add__item
+							input(type="text", placeholder="Forward reminder")
+							.btn-circle.btn-circle_grey
+								+svg('ic-plus','ic-plus', '10', '10')
 
-					.form-site-add__item
-						textarea(placeholder="Checked signed documents")
+						.form-site-add__item
+							textarea(placeholder="Checked signed documents")
 
-					label.input-check
-						input(type='checkbox')
-						span.input-check__mark
-							+svg('ic-tick','ic-tick', '8', '6')
-						span.input-check__text Send message to lead?
+						label.input-check
+							input(type='checkbox')
+							span.input-check__mark
+								+svg('ic-tick','ic-tick', '8', '6')
+							span.input-check__text Send message to lead?
 
-			.form-site__btn
-				button.btn
-					|Create
+				.form-site__btn
+					button.btn
+						|Create

@@ -153,9 +153,9 @@ button.btn{
 
 	&_grey{
 		background: #F9F9FB;
-		color: #000;
+		color: #8A919F;
 
-		.icon{fill: #000;}
+		.icon{fill: #8A919F;}
 
 		&:hover .icon{fill: #fff;}
 	}
@@ -173,9 +173,38 @@ button.btn{
 		}
 	}
 
+	&_border-dark{
+		background: #fff;
+		border: 1px solid #000;
+		color: #000;
+
+		.icon{fill: #000;}
+		
+		&:hover{
+			color: #fff;
+			background: #000;
+
+			.icon{fill: #fff;}
+		}
+	}
+
 	&_white{
 		background: rgba(255,255,255,0.15);
 		color: #fff;
+	}
+
+	&_white-fill{
+		background: #fff;
+		color: #000;
+
+		.icon{fill: #000;}
+
+		&:hover{
+			background: #3b3b3b;
+			color: #fff;
+
+			.icon{fill: #fff;}
+		}
 	}
 
 	&_opacity{
@@ -191,6 +220,12 @@ button.btn{
 			color: #8A919F;
 			.icon{fill: #8A919F;}
 		}
+	}
+
+	&_middle{
+		height: 3.4rem;
+		border-radius: 1.7rem;
+		padding: 0 20px;
 	}
 
 	&_small{
@@ -268,3 +303,5 @@ button.btn{
 .text-red{color: $color-red;}
 .text-green{color: $color-green;}
 .text-grey{color: $color-grey;}
+
+.bg-grey{background: #F9F9FB;}

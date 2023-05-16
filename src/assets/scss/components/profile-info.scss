@@ -406,3 +406,84 @@
 		&:hover .icon{fill: #000;}
 	}
 }
+
+.profile-role{
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		border-radius: 15px;
+		background: #FBFBFC;
+		padding: 20px;
+		margin-bottom: 20px;
+
+		.select{width: 242px;}
+	}
+
+	&__title{
+		@include font(none, 500, 1.6rem, none, #000);
+	}
+
+	&__content{
+		border-radius: 15px;
+		background: #FBFBFC;
+		padding: 20px;
+	}
+
+	&__subtitle{
+		@include font(none, 500, 1.6rem, none, #000);
+		margin-bottom: 17px;
+	}
+
+	&__item{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		padding: 11px 0;
+		border-bottom: 1px solid #EFEFF4;
+		cursor: pointer;
+	}
+
+	&__text{
+		@include font(none, none, 1.6rem, none, #75769A);
+		transition: color 0.2s ease 0s;
+	}
+
+	&__btn{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background: rgba(255,77,90,0.06);
+		transition: background 0.2s ease 0s;
+
+		.icon{
+			fill: $color-red;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__item:hover &__text{color: #000;}
+
+	&__item:hover &__btn{
+		background: $color-red;
+		.icon{fill: #fff;}
+	}
+
+	&__more{
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+
+		.btn{
+			height: 3.4rem;
+			border-radius: 1.7rem;
+			font-size: 1.6rem;
+		}
+	}
+}

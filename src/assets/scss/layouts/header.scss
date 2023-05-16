@@ -44,9 +44,12 @@
 	&__arr{
 		.icon{fill: rgba(0,0,0,0.2);}
 	}
+
+	&.open .choose-acc-popup{display: inline-block;}
 }
 
 .choose-acc-popup{
+	display: none;
 	width: 380px;
 	border-radius: 22px;
 	border: 1px solid #F5F5F9;

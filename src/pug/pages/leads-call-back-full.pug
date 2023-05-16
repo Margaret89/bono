@@ -632,96 +632,97 @@ block model
 
 		.modal-main__title Call back
 
-		form.form-site
-			.form-site__columns
-				.form-site__column
-					.form-site__content
-						.form-site__item
-							input(type="text", name="title", placeholder="Meeting title", value="Call Tania +972-55-222-6266")
+		.modal-main__content
+			form.form-site
+				.form-site__columns
+					.form-site__column
+						.form-site__content
+							.form-site__item
+								input(type="text", name="title", placeholder="Meeting title", value="Call Tania +972-55-222-6266")
 
-						.form-site__item.form-site__item_sb
-							.switch
-								input(type="checkbox", id="switch1", checked="checked")
-								label.switch__content(for="switch1")
-									.switch__marker
+							.form-site__item.form-site__item_sb
+								.switch
+									input(type="checkbox", id="switch1", checked="checked")
+									label.switch__content(for="switch1")
+										.switch__marker
 
-								.switch__text Remind me
+									.switch__text Remind me
 
-							.time-label
-								+svg('ic-clock','ic-clock', '13', '13')
-								|In 15 minutes
+								.time-label
+									+svg('ic-clock','ic-clock', '13', '13')
+									|In 15 minutes
 
-						.form-site__item.form-site__item_half
-							label.input-date
-								input(type="date", value="2 December", disabled="disabled")
+							.form-site__item.form-site__item_half
+								label.input-date
+									input(type="date", value="2 December", disabled="disabled")
 
-								.input-date__field Today
-									.input-date__icon
-										+svg('ic-calendar','ic-calendar', '16', '18')
+									.input-date__field Today
+										.input-date__icon
+											+svg('ic-calendar','ic-calendar', '16', '18')
 
-						.form-site__item.form-site__item_half
-							.input-time
-								input(type="time", disabled="disabled", value="10:15")
-								.input-time__icon
-									+svg('ic-clock','ic-clock', '15', '15')
+							.form-site__item.form-site__item_half
+								.input-time
+									input(type="time", disabled="disabled", value="10:15")
+									.input-time__icon
+										+svg('ic-clock','ic-clock', '15', '15')
 
 
-						.form-site-add
-							.form-site-add__item
-								input(type="text", placeholder="Forward reminder")
-								.btn-circle.btn-circle_grey
-									+svg('ic-plus','ic-plus', '10', '10')
+							.form-site-add
+								.form-site-add__item
+									input(type="text", placeholder="Forward reminder")
+									.btn-circle.btn-circle_grey
+										+svg('ic-plus','ic-plus', '10', '10')
 
-							.form-site-add__item
-								textarea(placeholder="Checked signed documents")
+								.form-site-add__item
+									textarea(placeholder="Checked signed documents")
 
-							label.input-check
-								input(type='checkbox')
-								span.input-check__mark
-									+svg('ic-tick','ic-tick', '8', '6')
-								span.input-check__text Send message to lead?
+								label.input-check
+									input(type='checkbox')
+									span.input-check__mark
+										+svg('ic-tick','ic-tick', '8', '6')
+									span.input-check__text Send message to lead?
 
-				.form-site__column
-					.form-site__content
-						.tabs-page
-							ul.tabs-page__list
-								li.tabs-page__item.active(data-item='sms') SMS
-								li.tabs-page__item(data-item='email') Email
+					.form-site__column
+						.form-site__content
+							.tabs-page
+								ul.tabs-page__list
+									li.tabs-page__item.active(data-item='sms') SMS
+									li.tabs-page__item(data-item='email') Email
 
-							.tabs-page__content
-								#sms.tabs-page__content-item.active
-									input(type="text", placeholder="Title")
+								.tabs-page__content
+									#sms.tabs-page__content-item.active
+										input(type="text", placeholder="Title")
 
-									.msg
-										textarea(placeholder="Message")
+										.msg
+											textarea(placeholder="Message")
 
-										.msg__btn
-											span.btn.btn_green
-												+svg('ic-tick','ic-tick', '8', '8')
-												|Save as template
+											.msg__btn
+												span.btn.btn_green
+													+svg('ic-tick','ic-tick', '8', '8')
+													|Save as template
 
-											span.btn.btn_grey
-												+svg('ic-plus','ic-plus', '10', '10')
-												|Choose from template
+												span.btn.btn_grey
+													+svg('ic-plus','ic-plus', '10', '10')
+													|Choose from template
 
-									.file-upload
-										label.file-upload__content
-											input(type='file', name='file')
+										.file-upload
+											label.file-upload__content
+												input(type='file', name='file')
 
-											span.file-upload__icon
-												+svg('ic-spiral','ic-spiral', '17', '17')
-											span.file-upload__text Attach file
+												span.file-upload__icon
+													+svg('ic-spiral','ic-spiral', '17', '17')
+												span.file-upload__text Attach file
 
-										.file-upload-item
-											.file-upload-item__icon
-												+svg('ic-file','ic-file', '12', '15')
-											|Logo.svg
-											.file-upload-item__del
-												+svg('ic-minus','ic-minus', '7', '1')
+											.file-upload-item
+												.file-upload-item__icon
+													+svg('ic-file','ic-file', '12', '15')
+												|Logo.svg
+												.file-upload-item__del
+													+svg('ic-minus','ic-minus', '7', '1')
 
-									
-								#email.tabs-page__content-item
+										
+									#email.tabs-page__content-item
 
-			.form-site__btn.form-site__btn_end
-				button.btn
-					|Create
+				.form-site__btn.form-site__btn_end
+					button.btn
+						|Create

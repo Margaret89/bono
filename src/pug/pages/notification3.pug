@@ -1,0 +1,386 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Users';
+
+block content
+	section.page-top
+		.page-top__col
+			h1 Users
+
+			.page-top__text The list contains 200 users
+
+		.page-top__col
+			form.form-search
+				input(type="text", name="search", placeholder="Search")
+				button.form-search__btn(type="submit")
+					+svg('ic-search','ic-search', '15', '15')
+
+			.filter.filter_right
+				.filter__btn
+					+svg('ic-filter','ic-filter', '18', '16')
+					.filter__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+				.filter__popup
+					.filter__list
+						-
+							var list=[
+								{
+									title: 'Source',
+									items:[
+										{text:'Google.offcial', status:'active'},
+										{text:'Google.fb'},
+										{text:'Google.ig'},
+										{text:'Google.tt'},
+									]
+								},
+								{
+									title: 'Status',
+									items:[
+										{text:'Active', status:'active'},
+										{text:'Waiting'},
+										{text:'Pause'},
+										{text:'Decline'},
+									]
+								},
+								{
+									title: 'Meeting',
+									items:[
+										{text:'Google.offcial', status:'active'},
+										{text:'Google.fb'},
+									]
+								},
+								{
+									title: 'UTM',
+									items:[
+										{text:'Active'},
+										{text:'Waiting'},
+									]
+								},
+							]
+						each sect in list
+							.filter__sect
+								.filter__title= sect.title
+
+								each item in sect.items
+									.filter__item
+										label.input-check
+											if(item.status=='active')
+												input(type='checkbox', checked="checked")
+											else
+												input(type='checkbox')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '8', '6')
+											span.input-check__text= item.text
+
+					.filter__bottom
+						span.btn.btn_border
+							+svg('ic-clear','ic-clear', '19', '19')
+							|Clear All
+
+						span.btn.btn_border
+							|Apply
+							+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+
+			.btn-circle.btn-circle_big
+				+svg('ic-plus','ic-plus', '12', '12')
+
+	section.table-site-wrap
+		table.table-site
+			thead
+				tr
+					th.table-site__head.table-site__head_check
+						.table-site__head-content
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+
+					th.table-site__head.table-site__head_id
+						.table-site__head-content #
+					th.table-site__head
+						.table-site__head-content Name
+					th.table-site__head
+						.table-site__head-content Phone
+					th.table-site__head
+						.table-site__head-content Email
+					th.table-site__head
+						.table-site__head-content Status
+					th.table-site__head
+						.table-site__head-content Role
+					th.table-site__head
+						.table-site__head-content Joined at
+
+			tbody
+				-
+					var list=[
+						{
+							id:'1',
+							img:'jessica.png',
+							name:'Jessica Frencheska',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'2',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Active',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'3',
+							img:'keily.png',
+							name:'Keily Triump',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'4',
+							fio:'EE',
+							name:'Eran Eluz',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'5',
+							fio:'JR',
+							name:'Jerry Ronie',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'6',
+							fio:'AA',
+							name:'Ali Abuzark',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Active',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'7',
+							fio:'OC',
+							name:'Osher Cohen',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'8',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'9',
+							fio:'EP',
+							name:'Eyal Poipembuilm',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'10',
+							fio:'GJ',
+							name:'Grifin Jeck',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'11',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Active',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+					]
+				each item in list
+					tr
+						td
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+
+						td= item.id
+						td
+							.table-name
+								.table-name__img(style=item.img?"background-image: url(assets/img/"+item.img+")":"")
+									if(item.fio)
+										=item.fio
+								.table-name__text= item.name
+
+						td= item.phone
+						td= item.email
+
+						td
+							.tag-wrap
+								.tag(class=item.status_color?'tag_'+item.status_color:'')= item.status
+
+								if(item.status_color=='yellow')
+									+svg('ic-send-mail','ic-send-mail ic-yellow', '16', '14')
+
+						td= item.role
+						td= item.date
+
+
+		include ../components/pager
+
+block model
+	.site-shadow
+	.modal.open
+		.modal__top
+			.btn-circle.btn-circle_grey
+				+svg('ic-close','ic-close', '10', '10')
+
+		.modal__content
+			.notice-info
+				.notice-info__top
+					.notice-info__title Notifications
+
+					.notice-info__status.notice-info__status_green
+						+svg('ic-check','ic-check', '17', '9')
+						|Mark all as read
+			
+				.tabs-page.tabs-page_line
+					ul.tabs-page__list
+						li.tabs-page__item.active(data-item='all') All
+							span.tabs-page__count.tabs-page__count_red 74
+						li.tabs-page__item(data-item='unread') Unread
+							span.tabs-page__count 0
+						li.tabs-page__item(data-item='read') Read
+							span.tabs-page__count 74
+
+					.tabs-page__content
+						#sms.tabs-page__content-item.active
+							-
+								var list=[
+									{
+										img:'bono.png',
+										text_bold1:'Bono ',
+										text1:'recommended to go online camaigns shop to get more value and improve your account, ',
+										text_bold2:'Campaign Marketing',
+										disabled:'true',
+									},
+									{
+										img:'keily.png',
+										text_bold1:'Sara Milrose ',
+										text1:'want to call you at 16:32 today',
+										check:'true',
+										disabled:'true',
+									},
+									{
+										notice:'true',
+										text1:'Survey ',
+										text_bold2:'”Customers feedback” ',
+										text2:'is created',
+										disabled:'true',
+									},
+									{
+										img:'bono.png',
+										text_bold1:'Bono ',
+										text1:'recommended to go online camaigns shop to get more value and improve your account, ',
+										text_bold2:'Campaign Marketing',
+										disabled:'true',
+									},
+									{
+										img:'keily.png',
+										text_bold1:'Sara Milrose ',
+										text1:'want to call you at 16:32 today',
+										disabled:'true',
+									},
+									{
+										notice:'true',
+										text1:'Survey ',
+										text_bold2:'”Customers feedback” ',
+										text2:'is created',
+										disabled:'true',
+									},
+									{
+										notice:'true',
+										text1:'Survey ',
+										text_bold2:'”Customers feedback” ',
+										text2:'is created',
+										disabled:'true',
+									},
+								]
+							each item in list
+								.notice-item(class=item.disabled?'disabled':'')
+									if(item.img)
+										.notice-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+									if(item.notice)
+										.notice-item__img
+											+svg('ic-notice','ic-notice', '18', '21')
+
+									.notice-item__content
+										.notice-item__info
+											.notice-item__text
+												if(item.text_bold1)
+													span.notice-item__text-accent= item.text_bold1
+													| 
+												if(item.text1)
+													= item.text1
+													| 
+												if(item.text_bold2)
+													span.notice-item__text-accent= item.text_bold2
+													| 
+												if(item.text2)
+													= item.text2
+
+											if(item.disabled != 'true')
+												.notice-item__circle
+
+										.notice-item__bottom
+											.notice-item__date 23 May 2021, at 09:02
+
+											if(item.disabled)
+												.notice-item__tag.notice-item__tag_green
+													+svg('ic-eye','ic-eye', '12', '10')
+													|Read
+											else
+												.notice-item__tag
+													if(item.check)
+														+svg('ic-tick','ic-tick', '8', '8')
+													|Mark as read
+
+						#unread.tabs-page__content-item
+						#read.tabs-page__content-item

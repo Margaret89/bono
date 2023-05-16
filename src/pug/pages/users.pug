@@ -1,0 +1,265 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Users';
+
+block content
+	section.page-top
+		.page-top__col
+			h1 Users
+
+			.page-top__text The list contains 200 users
+
+		.page-top__col
+			form.form-search
+				input(type="text", name="search", placeholder="Search")
+				button.form-search__btn(type="submit")
+					+svg('ic-search','ic-search', '15', '15')
+
+			.filter.filter_right
+				.filter__btn
+					+svg('ic-filter','ic-filter', '18', '16')
+					.filter__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+				.filter__popup
+					.filter__list
+						-
+							var list=[
+								{
+									title: 'Source',
+									items:[
+										{text:'Google.offcial', status:'active'},
+										{text:'Google.fb'},
+										{text:'Google.ig'},
+										{text:'Google.tt'},
+									]
+								},
+								{
+									title: 'Status',
+									items:[
+										{text:'Active', status:'active'},
+										{text:'Waiting'},
+										{text:'Pause'},
+										{text:'Decline'},
+									]
+								},
+								{
+									title: 'Meeting',
+									items:[
+										{text:'Google.offcial', status:'active'},
+										{text:'Google.fb'},
+									]
+								},
+								{
+									title: 'UTM',
+									items:[
+										{text:'Active'},
+										{text:'Waiting'},
+									]
+								},
+							]
+						each sect in list
+							.filter__sect
+								.filter__title= sect.title
+
+								each item in sect.items
+									.filter__item
+										label.input-check
+											if(item.status=='active')
+												input(type='checkbox', checked="checked")
+											else
+												input(type='checkbox')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '8', '6')
+											span.input-check__text= item.text
+
+					.filter__bottom
+						span.btn.btn_border
+							+svg('ic-clear','ic-clear', '19', '19')
+							|Clear All
+
+						span.btn.btn_border
+							|Apply
+							+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+
+			.btn-circle.btn-circle_big
+				+svg('ic-plus','ic-plus', '12', '12')
+
+	section.table-site-wrap
+		table.table-site
+			thead
+				tr
+					th.table-site__head.table-site__head_check
+						.table-site__head-content
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+
+					th.table-site__head.table-site__head_id
+						.table-site__head-content #
+					th.table-site__head
+						.table-site__head-content Name
+					th.table-site__head
+						.table-site__head-content Phone
+					th.table-site__head
+						.table-site__head-content Email
+					th.table-site__head
+						.table-site__head-content Status
+					th.table-site__head
+						.table-site__head-content Role
+					th.table-site__head
+						.table-site__head-content Joined at
+
+			tbody
+				-
+					var list=[
+						{
+							id:'1',
+							img:'jessica.png',
+							name:'Jessica Frencheska',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'2',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Active',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'3',
+							img:'keily.png',
+							name:'Keily Triump',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'4',
+							fio:'EE',
+							name:'Eran Eluz',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'5',
+							fio:'JR',
+							name:'Jerry Ronie',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'6',
+							fio:'AA',
+							name:'Ali Abuzark',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Active',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'7',
+							fio:'OC',
+							name:'Osher Cohen',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'8',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Affiliator',
+							date:'20.3.2023',
+						},
+						{
+							id:'9',
+							fio:'EP',
+							name:'Eyal Poipembuilm',
+							phone:'+1 806 1239 3284',
+							email:'schuppe.jany@hotmail.com',
+							status:'Pending',
+							status_color:'yellow',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'10',
+							fio:'GJ',
+							name:'Grifin Jeck',
+							phone:'+1 806 1239 3284',
+							email:'legros.austyn@hotmail.com',
+							status:'Active',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+						{
+							id:'11',
+							img:'abraham.png',
+							name:'Abraham Luis',
+							phone:'+972 52 888 493',
+							email:'estelle31@rowe.org',
+							status:'Active',
+							role:'Lead',
+							date:'20.3.2023',
+						},
+					]
+				each item in list
+					tr
+						td
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+
+						td= item.id
+						td
+							.table-name
+								.table-name__img(style=item.img?"background-image: url(assets/img/"+item.img+")":"")
+									if(item.fio)
+										=item.fio
+								.table-name__text= item.name
+
+						td= item.phone
+						td= item.email
+
+						td
+							.tag-wrap
+								.tag(class=item.status_color?'tag_'+item.status_color:'')= item.status
+
+								if(item.status_color=='yellow')
+									+svg('ic-send-mail','ic-send-mail ic-yellow', '16', '14')
+
+						td= item.role
+						td= item.date
+
+
+		include ../components/pager
