@@ -1,177 +1,108 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Create company';
+	- var title = 'Settings';
+	- var main_color = 'grey';
 
 block content
-	section.page-top
-		.page-top__col
-			h1 Campaigns
+	section.settings
+		ul.left-menu
+			-
+				var list=[
+					{icon:'ic-briefcase', icon_width:'15', icon_height:'15', text:'Business'},
+					{icon:'ic-wallet', icon_width:'17', icon_height:'16', text:'Billing', status:'active'},
+					{icon:'ic-link', icon_width:'17', icon_height:'10', text:'Integrations'},
+					{icon:'ic-note', icon_width:'17', icon_height:'17', text:'Leads Statuses'},
+					{icon:'ic-notice', icon_width:'16', icon_height:'18', text:'Notifications Settings'},
+				]
+			each item in list
+				li.left-menu__item(class=item.status?item.status:'')
+					.left-menu__icon
+						+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+					.left-menu__text= item.text
 
-			.page-top__text The list contains 3,021 camapigns
+		.settings__wrap
+			.settings__content
+				.settings__title Billing
 
-		.page-top__col
-			.filter-date
-				.filter-date-btn
-					span.filter-date-btn__content
-						+svg('ic-calendar','ic-calendar', '16', '18')
-						span.filter-date-btn__text Filter by date
+				.credit-history
+					.credit-history__sect.credit-history__sect_green
+						.credit-history__top
+							.credit-history__title Crad Details
+							.btn-circle.btn-circle_opacity
+								+svg('ic-edit','ic-edit', '14', '14')
 
-					span.filter-date-btn__arr
-						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+						.credit-history-info
+							.credit-history-info__icon
+								+svg('ic-credit-card','ic-credit-card', '22', '19')
+							.credit-history-info__text 4580&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;8899
+					
+					.credit-history__sect
+						.credit-history__top
+							.credit-history__title Bank Account Details
+							.btn-circle.btn-circle_grey
+								+svg('ic-edit','ic-edit', '14', '14')
 
-				.filter-date__popup
-					.calendar
-						.calendar-period
+						.credit-history__list
 							-
 								var list=[
-									{text:'Custom', status:'active'},
-									{text:'Today'},
-									{text:'Yesterday'},
-									{text:'This week'},
-									{text:'Last week'},
-									{text:'This month'},
-									{text:'Last month'},
-									{text:'Alll time'},
+									{label:'Owners name', val:'Jones Fredinand'},
+									{label:'Bank number', val:'1234567'},
+									{label:'Branch number', val:'7654321'},
+									{label:'Account number', val:'9087654321'},
 								]
 							each item in list
-								.calendar-period__item(class=item.status?'active':'')= item.text
+								.credit-history__item
+									.credit-history__label= item.label
+									.credit-history__val= item.val
+					
+					.credit-history__sect
+						.credit-history__top
+							.credit-history__title Invoices History
+							.btn-circle.btn-circle_grey
+								+svg('ic-export','ic-export', '16', '16')
 
-						.calendar-main
-							.calendar-main__top
-								.calendar-main__title December 2023
+						.table-site-wrap.table-site-wrap_white
+							table.table-site
+								thead
+									tr
+										th.table-site__head
+											.table-site__head-content Invoice no.
 
-								.calendar-main__arrows
-									.calendar-main__arr
-										+svg('ic-arrow-left','ic-arrow-left', '6', '11')
+										th.table-site__head
+											.table-site__head-content Date
 
-									.calendar-main__arr
-										+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+										th.table-site__head
+											.table-site__head-content Amount
 
-							.calendar-main__content
-								.calendar-main__label S
-								.calendar-main__label M 
-								.calendar-main__label T
-								.calendar-main__label W
-								.calendar-main__label T
-								.calendar-main__label F
-								.calendar-main__label S
-								.calendar-main__item.disabled 27
-								.calendar-main__item.disabled 28
-								.calendar-main__item.disabled 29
-								.calendar-main__item.disabled 30
-								.calendar-main__item 1
-								.calendar-main__item 2
-								.calendar-main__item 3
-								.calendar-main__item 4
-								.calendar-main__item 5
-								.calendar-main__item.active 6
-								.calendar-main__item.selected 7
-								.calendar-main__item.selected 8
-								.calendar-main__item.selected 9
-								.calendar-main__item.selected 10
-								.calendar-main__item.selected 11
-								.calendar-main__item.selected 12
-								.calendar-main__item.selected 13
-								.calendar-main__item.selected 14
-								.calendar-main__item.active 15
-								.calendar-main__item 16
-								.calendar-main__item 17
-								.calendar-main__item 18
-								.calendar-main__item 19
-								.calendar-main__item 20
-								.calendar-main__item 21
-								.calendar-main__item 22
-								.calendar-main__item 23
-								.calendar-main__item 24
-								.calendar-main__item 25
-								.calendar-main__item 26
-								.calendar-main__item 27
-								.calendar-main__item 28
-								.calendar-main__item 29
-								.calendar-main__item 30
-								.calendar-main__item 31
+										th.table-site__head
+											.table-site__head-content Preview
 
-			.btn-circle.btn-circle_big
-				+svg('ic-plus','ic-plus', '12', '12')
+								tbody
+									-
+										var list=[
+											{inv:'6003', date:'20.3.2023', amount:'$80'},
+											{inv:'6002', date:'20.3.2023', amount:'$120'},
+											{inv:'6001', date:'20.1.2023', amount:'$80'},
+											{inv:'6000', date:'20.12.2022', amount:'$80'},
+										]
+									each item in list
+										tr
+											td= item.inv
+											td= item.date
+											td
+												span.text-green= item.amount
+											td
+												.file
+													.file__icon
+														+svg('ic-paper','ic-paper', '13', '14')
+													.file__text PDF
 
-	section.table-site-wrap
-		table.table-site
-			thead
-				tr
-					th.table-site__head.table-site__head_check
-						.table-site__head-content
-							label.input-check
-								input(type='checkbox')
-								span.input-check__mark
-									+svg('ic-tick','ic-tick', '8', '6')
+							.pager
+								a.pager__nav
+									+svg('ic-arr-left','ic-arr-left', '10', '8')
+									|Previous
 
-					th.table-site__head.table-site__head_id
-						.table-site__head-content #
-					th.table-site__head
-						.table-site__head-content Name
-					th.table-site__head
-						.table-site__head-content Link
-					th.table-site__head
-						.table-site__head-content Start Date
-					th.table-site__head
-						.table-site__head-content End Date
-					th.table-site__head
-						.table-site__head-content Lead Fee
-					th.table-site__head
-						.table-site__head-content Sale Fee
-					th.table-site__head
-						.table-site__head-content Leads
-					th.table-site__head
-						.table-site__head-content Sales
-					th.table-site__head
-						.table-site__head-content Fee From Leads
-					th.table-site__head
-						.table-site__head-content Fee From Sales
-					th.table-site__head
-						.table-site__head-content UTM
-
-			tbody
-				-
-					var list=[
-						{id:'1', name:'ZARA', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'2', name:'Google', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'3', name:'Nike', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'4', name:'Adidas', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'5', name:'Apple', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'6', name:'Microsoft', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'7', name:'Nividia', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'8', name:'Intel', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'9', name:'Tami 4', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'10', name:'Osem', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'11', name:'Uniliver', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-					]
-				each item in list
-					tr
-						td
-							label.input-check
-								input(type='checkbox')
-								span.input-check__mark
-									+svg('ic-tick','ic-tick', '8', '6')
-
-						td= item.id
-						td
-							.table-name
-								.table-name__img(style="background-image: url(assets/img/zara.png)")
-								.table-name__text= item.name
-						td= item.link
-						td= item.start
-						td= item.end
-						td= item.lead
-						td= item.sale
-						td
-							.tag.tag_red= item.leads
-						td
-							.tag= item.sales
-						td
-							.text-red= item.from_leads
-						td
-							.text-green= item.from_sales
-						td= item.utm
-
-		include ../components/pager
+								a.pager__nav
+									|Next
+									+svg('ic-arr-right','ic-arr-right', '10', '8')

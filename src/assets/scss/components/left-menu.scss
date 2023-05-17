@@ -7,6 +7,7 @@
 	padding: 24px 16px;
 	margin: 0;
 	list-style: none;
+	overflow-y: auto;
 
 	&__item{
 		display: flex;
@@ -41,5 +42,10 @@
 
 		&__text{color: #000;}
 		.icon{fill: #000;}
+	}
+
+	&__item.active &__text,
+	&__item:hover &__text{
+		color: #000;
 	}
 }

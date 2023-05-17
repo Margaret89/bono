@@ -1,177 +1,109 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Create company';
+	- var title = 'Settings';
+	- var main_color = 'grey';
 
 block content
-	section.page-top
-		.page-top__col
-			h1 Campaigns
+	section.settings
+		ul.left-menu
+			-
+				var list=[
+					{icon:'ic-briefcase', icon_width:'15', icon_height:'15', text:'Business'},
+					{icon:'ic-wallet', icon_width:'17', icon_height:'16', text:'Billing'},
+					{icon:'ic-link', icon_width:'17', icon_height:'10', text:'Integrations'},
+					{icon:'ic-note', icon_width:'17', icon_height:'17', text:'Leads Statuses'},
+					{icon:'ic-notice', icon_width:'16', icon_height:'18', text:'Notifications Settings', status:'active'},
+				]
+			each item in list
+				li.left-menu__item(class=item.status?item.status:'')
+					.left-menu__icon
+						+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+					.left-menu__text= item.text
 
-			.page-top__text The list contains 3,021 camapigns
+		.settings__wrap
+			.settings__content(style="width: 870px")
+				.settings__title Notifications settings
 
-		.page-top__col
-			.filter-date
-				.filter-date-btn
-					span.filter-date-btn__content
-						+svg('ic-calendar','ic-calendar', '16', '18')
-						span.filter-date-btn__text Filter by date
+				.table-site-wrap.table-site-wrap_white
+					table.table-site
+						thead
+							tr
+								th.table-site__head
+									.table-site__head-content Send notifications when
 
-					span.filter-date-btn__arr
-						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+								th.table-site__head
+									.table-site__head-content.table-site__head-content_center Push
 
-				.filter-date__popup
-					.calendar
-						.calendar-period
+								th.table-site__head
+									.table-site__head-content.table-site__head-content_center Email
+
+								th.table-site__head
+									.table-site__head-content.table-site__head-content_center SMS
+
+						tbody
 							-
 								var list=[
-									{text:'Custom', status:'active'},
-									{text:'Today'},
-									{text:'Yesterday'},
-									{text:'This week'},
-									{text:'Last week'},
-									{text:'This month'},
-									{text:'Last month'},
-									{text:'Alll time'},
+									{title:'Inattention lead', check1:'false', check2:'false', check3:'false'},
+									{title:'Payment received', check1:'true', check2:'true', check3:'true'},
+									{title:'Campaign started', check1:'true', check2:'true', check3:'true'},
+									{title:'Campaign ended', check1:'true', check2:'true', check3:'true'},
+									{title:'Affiliator connection request', check1:'false', check2:'false', check3:'false'},
+									{title:'SMS package is about to get ended', check1:'true', check2:'true', check3:'true'},
+									{title:'Calls plan reached out', check1:'true', check2:'true', check3:'true'},
+									{title:'Lating employee', check1:'true', check2:'true', check3:'true'},
+									{title:'Missing employee', check1:'false', check2:'false', check3:'false'},
+									{title:'Employee ended early', check1:'true', check2:'true', check3:'true'},
+									{title:'str1', check1:'true', check2:'true', check3:'true'},
+									{title:'str2', check1:'true', check2:'true', check3:'true'},
+									{title:'str3', check1:'true', check2:'true', check3:'true'},
+									{title:'New campaign from favorite company', check1:'true', check2:'true', check3:'true'},
 								]
 							each item in list
-								.calendar-period__item(class=item.status?'active':'')= item.text
+								tr
+									td
+										if(item.title == 'str1')
+											|Employee made less
+											span.table-site-count 20
+											| calls in range of
+											span.table-site-count.table-site-count_dark 20
+											| minutes/hours/days/month
+										else if(item.title == 'str2')
+											|Lead status changed to
+											span.table-site-count 20
+											| or changed from
+											span.table-site-count 60
+											| to
+											span.table-site-count 80
+										else if(item.title == 'str3')
+											|Double lead in range of minutes/hours/days/month
+											span.table-site-count 20
+										else if(item.title == 'str4')
+										else
+											= item.title
+									td.text-center
+										label.input-check
+											if(item.check1 == 'true')
+												input(type='checkbox', checked="checked")
+											else
+												input(type='checkbox')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '8', '6')
+									td.text-center
+										label.input-check
+											if(item.check2 == 'true')
+												input(type='checkbox', checked="checked")
+											else
+												input(type='checkbox')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '8', '6')
+									td.text-center
+										label.input-check
+											if(item.check3 == 'true')
+												input(type='checkbox', checked="checked")
+											else
+												input(type='checkbox')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '8', '6')
 
-						.calendar-main
-							.calendar-main__top
-								.calendar-main__title December 2023
-
-								.calendar-main__arrows
-									.calendar-main__arr
-										+svg('ic-arrow-left','ic-arrow-left', '6', '11')
-
-									.calendar-main__arr
-										+svg('ic-arrow-right','ic-arrow-right', '6', '11')
-
-							.calendar-main__content
-								.calendar-main__label S
-								.calendar-main__label M 
-								.calendar-main__label T
-								.calendar-main__label W
-								.calendar-main__label T
-								.calendar-main__label F
-								.calendar-main__label S
-								.calendar-main__item.disabled 27
-								.calendar-main__item.disabled 28
-								.calendar-main__item.disabled 29
-								.calendar-main__item.disabled 30
-								.calendar-main__item 1
-								.calendar-main__item 2
-								.calendar-main__item 3
-								.calendar-main__item 4
-								.calendar-main__item 5
-								.calendar-main__item.active 6
-								.calendar-main__item.selected 7
-								.calendar-main__item.selected 8
-								.calendar-main__item.selected 9
-								.calendar-main__item.selected 10
-								.calendar-main__item.selected 11
-								.calendar-main__item.selected 12
-								.calendar-main__item.selected 13
-								.calendar-main__item.selected 14
-								.calendar-main__item.active 15
-								.calendar-main__item 16
-								.calendar-main__item 17
-								.calendar-main__item 18
-								.calendar-main__item 19
-								.calendar-main__item 20
-								.calendar-main__item 21
-								.calendar-main__item 22
-								.calendar-main__item 23
-								.calendar-main__item 24
-								.calendar-main__item 25
-								.calendar-main__item 26
-								.calendar-main__item 27
-								.calendar-main__item 28
-								.calendar-main__item 29
-								.calendar-main__item 30
-								.calendar-main__item 31
-
-			.btn-circle.btn-circle_big
-				+svg('ic-plus','ic-plus', '12', '12')
-
-	section.table-site-wrap
-		table.table-site
-			thead
-				tr
-					th.table-site__head.table-site__head_check
-						.table-site__head-content
-							label.input-check
-								input(type='checkbox')
-								span.input-check__mark
-									+svg('ic-tick','ic-tick', '8', '6')
-
-					th.table-site__head.table-site__head_id
-						.table-site__head-content #
-					th.table-site__head
-						.table-site__head-content Name
-					th.table-site__head
-						.table-site__head-content Link
-					th.table-site__head
-						.table-site__head-content Start Date
-					th.table-site__head
-						.table-site__head-content End Date
-					th.table-site__head
-						.table-site__head-content Lead Fee
-					th.table-site__head
-						.table-site__head-content Sale Fee
-					th.table-site__head
-						.table-site__head-content Leads
-					th.table-site__head
-						.table-site__head-content Sales
-					th.table-site__head
-						.table-site__head-content Fee From Leads
-					th.table-site__head
-						.table-site__head-content Fee From Sales
-					th.table-site__head
-						.table-site__head-content UTM
-
-			tbody
-				-
-					var list=[
-						{id:'1', name:'ZARA', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'2', name:'Google', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'3', name:'Nike', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'4', name:'Adidas', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'5', name:'Apple', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'6', name:'Microsoft', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'7', name:'Nividia', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'8', name:'Intel', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'9', name:'Tami 4', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'10', name:'Osem', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-						{id:'11', name:'Uniliver', link:'https://bit.ly/campain=312=affilator4', start:'20.3.2023', end:'20.3.2023', lead:'$112', sale:'$112', leads:'200', sales:'200', from_leads:'$112', from_sales:'$112', utm:'Facebook Post 4'},
-					]
-				each item in list
-					tr
-						td
-							label.input-check
-								input(type='checkbox')
-								span.input-check__mark
-									+svg('ic-tick','ic-tick', '8', '6')
-
-						td= item.id
-						td
-							.table-name
-								.table-name__img(style="background-image: url(assets/img/zara.png)")
-								.table-name__text= item.name
-						td= item.link
-						td= item.start
-						td= item.end
-						td= item.lead
-						td= item.sale
-						td
-							.tag.tag_red= item.leads
-						td
-							.tag= item.sales
-						td
-							.text-red= item.from_leads
-						td
-							.text-green= item.from_sales
-						td= item.utm
-
-		include ../components/pager
+					
