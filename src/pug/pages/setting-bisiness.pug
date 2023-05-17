@@ -1,0 +1,99 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Settings';
+	- var main_color = 'grey';
+
+block content
+	section.settings
+		ul.left-menu
+			-
+				var list=[
+					{icon:'ic-briefcase', icon_width:'15', icon_height:'15', text:'Business', status:'active'},
+					{icon:'ic-wallet', icon_width:'17', icon_height:'16', text:'Billing'},
+					{icon:'ic-link', icon_width:'17', icon_height:'10', text:'Integrations'},
+					{icon:'ic-note', icon_width:'17', icon_height:'17', text:'Leads Statuses'},
+					{icon:'ic-notice', icon_width:'16', icon_height:'18', text:'Notifications Settings'},
+				]
+			each item in list
+				li.left-menu__item(class=item.status?item.status:'')
+					.left-menu__icon
+						+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+					.left-menu__text= item.text
+
+		.settings__wrap
+			.settings__content
+				.settings__title
+
+				form.form-site
+					.form-site__ava-wrap
+						.form-site__ava(style="background-image: url(assets/img/google_plus.svg)")
+
+						.btn-circle.btn-circle_grey
+							+svg('ic-photo','ic-photo', '17', '17')
+
+					.form-site__content
+						.form-site__item.form-site__item_half
+							.form-site__label Business name
+							input(type="text", placeholder="E.g. Google")
+
+						.form-site__item.form-site__item_half
+							.form-site__label Primary line of business
+							.select
+								.select__field None
+									.select__arr
+										+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+								.select__popup
+									-
+										var list=[
+											{text:'Parameters'},
+											{text:'Parameters'},
+										]
+									each item in list
+										.select__item
+											.select__text= item.text
+
+						
+						.form-site__item.form-site__item_half
+							.form-site__label Business number
+							input(type="text", placeholder="E.g. Google")
+
+						.form-site__item.form-site__item_half
+							.form-site__label Secondary line of business
+							.select
+								.select__field None
+									.select__arr
+										+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+								.select__popup
+									-
+										var list=[
+											{text:'Parameters'},
+											{text:'Parameters'},
+										]
+									each item in list
+										.select__item
+											.select__text= item.text
+
+						.form-site__item.form-site__item_half
+							.form-site__label Address
+							input(type="text", placeholder="E.g. Google")
+
+						.form-site__item.form-site__item_half
+							.form-site__label 
+							.form-site-edit
+								.form-site-edit__text Working hours
+								.form-site-edit__btn
+									+svg('ic-edit','ic-edit', '20', '20')
+
+						.form-site__item.form-site__item_half
+							.form-site__label Country
+							input(type="text", placeholder="E.g. Google")
+
+						.form-site__item.form-site__item_half
+							.form-site__label 
+							.form-site-edit
+								.form-site-edit__text Business signature
+								.form-site-edit__btn
+									+svg('ic-edit','ic-edit', '20', '20')

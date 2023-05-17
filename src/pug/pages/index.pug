@@ -113,6 +113,22 @@ block content
 			each page in pagelist
 				li
 					a(href=page.href, target="_blank")= page.name
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'setting-bisiness.html',name:'Business'},
+				{href: 'setting-billing.html',name:'Billing'},
+				{href: 'setting-integrations.html',name:'Integrations'},
+				{href: 'setting-leads.html',name:'Leads Statuses'},
+				{href: 'setting-notice.html',name:'Notifications Settings'},
+			];
+		h2 Settings
+
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
 
 		br
 		br
