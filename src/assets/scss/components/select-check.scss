@@ -37,7 +37,7 @@
 
 	&__popup{
 		display: none;
-		width: 180px;
+		min-width: 180px;
 		padding: 10px 15px;
 		max-height: 230px;
 		border: 1px solid #F5F5F9;
@@ -48,11 +48,19 @@
 		left: 0;
 		overflow-y: auto;
 		z-index: 10;
+
+		.btn{
+			width: 100%;
+			margin-bottom: 10px;
+		}
 	}
 
-	&__item:not(:last-child){margin-bottom: 18px;}
+	&__item:not(:last-child){margin-bottom: 20px;}
 
 	&__item{
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
 		.input-check__text{color: #8A919F;}
 		input[type=checkbox]:checked ~ .input-check__text{color: #000;}
 	}
@@ -60,6 +68,17 @@
 	&_right &__popup{
 		left: auto;
 		right: 0;
+	}
+
+	&__edit{
+		flex-shrink: 0;
+
+		.icon{
+			fill: #75769A;
+			transition: fill 0.2s ease 0s;
+		}
+
+		&:hover .icon{fill: #000;}
 	}
 
 	&.open &__field{background: #F5F5F9;}

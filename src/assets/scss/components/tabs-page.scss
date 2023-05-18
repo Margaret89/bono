@@ -25,19 +25,41 @@
 		transition: all 0.2s ease;
 		position: relative;
 		cursor: pointer;
+
+		.icon{
+			fill: #8A919F;
+			transition: fill 0.2s ease 0s;
+		}
 	}
 
 	&__count{
 		display: inline-flex;
 		align-items: center;
-		height: 1.8rem;
-		border-radius: 0.9rem;
+		justify-content: center;
+		height: 2.4rem;
+		min-width: 2.4rem;
+		border-radius: 1.2rem;
 		background: #F5F5F9;
 		padding: 0 5px;
 		@include font(none, none, 1.2rem, none, #75769A);
 
 		&_red{
 			background: #FF4D5A;
+			color: #fff;
+		}
+
+		&_yellow{
+			background: #F9AE3B;
+			color: #fff;
+		}
+
+		&_purple{
+			background: #C150FF;
+			color: #fff;
+		}
+
+		&_green{
+			background: #0FAD68;
 			color: #fff;
 		}
 	}
@@ -48,6 +70,8 @@
 		border-color: rgba(138,145,159,0.23);
 		color: #000;
 		z-index: 2;
+
+		.icon{fill: #000;}
 	}
 
 	&__item:first-child{border-radius: 1.9rem 0 0 1.9rem;}
@@ -63,7 +87,7 @@
 	&_line &__item{
 		height: auto;
 		border: none;
-		padding: 16px 20px;
+		padding: 16px 30px;
 	}
 
 	&_line &__item::after{

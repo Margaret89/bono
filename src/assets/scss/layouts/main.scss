@@ -151,6 +151,19 @@ button.btn{
 		&:hover{background: #f73643;}
 	}
 
+	&_red-light{
+		background: rgba(255,77,90,0.06);
+		color: $color-red;
+
+		.icon{fill: $color-red;}
+		
+		&:hover{
+			background: $color-red;
+			color: #fff;
+			.icon{fill: #fff;}
+		}
+	}
+
 	&_grey{
 		background: #F9F9FB;
 		color: #8A919F;

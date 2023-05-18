@@ -35,6 +35,20 @@
 		}
 	}
 
+	&__circle{
+		flex-shrink: 0;
+		display: inline-block;
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: $color-green;
+		margin-right: -7px;
+
+		&_red{background: $color-red;}
+		&_yellow{background: $color-yellow;}
+		&_purple{background: $color-purple;}
+	}
+
 	.link-site:hover{text-decoration: none;}
 
 	input[type=checkbox]:checked ~ &__mark{

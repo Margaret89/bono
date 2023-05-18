@@ -129,6 +129,26 @@ block content
 			each page in pagelist
 				li
 					a(href=page.href, target="_blank")= page.name
+		br
+		br
+		- 
+			var pagelist = [
+				{href: 'tasks.html',name:'Tasks'},
+				{href: 'tasks-menu.html',name:'Tasks (open menu)'},
+				{href: 'tasks-columns.html',name:'Tasks (open columns)'},
+				{href: 'tasks-edit-column.html',name:'Tasks (edit column)'},
+				{href: 'tasks-add-column.html',name:'Tasks (add column)'},
+				{href: 'tasks-create.html',name:'Create task'},
+				{href: 'tasks-create-full.html',name:'Create task (full)'},
+				{href: 'tasks-line.html',name:'Tasks (line view)'},
+				{href: 'tasks-line-uncheck.html',name:'Tasks (line view, uncheck)'},
+			];
+		h2 Tasks
+
+		ul
+			each page in pagelist
+				li
+					a(href=page.href, target="_blank")= page.name
 
 		br
 		br

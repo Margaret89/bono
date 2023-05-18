@@ -1,0 +1,180 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Tasks';
+
+block content
+	section.page-top
+		.page-top__col
+			h1 Tasks
+
+		.page-top__col
+			form.form-search
+				input(type="text", name="search", placeholder="Search")
+				button.form-search__btn(type="submit")
+					+svg('ic-search','ic-search', '15', '15')
+
+			.select-check.select-check_right
+				.select-check__field
+					.select-check__info
+						+svg('ic-column','ic-column', '15', '15')
+						|Columns
+
+					.select-check__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+					.select-check__popup
+						-
+							var list=[
+								{text:'To Do', color:'red', status:'active'},
+								{text:'In Progress', color:'yellow', status:'active'},
+								{text:'Delayed / Blocked', color:'purple', status:'active'},
+								{text:'Done', status:'active'},
+								
+							]
+						each item in list
+							.btn.btn_middle
+								+svg('ic-plus','ic-plus', '10', '10')
+								|Add Columns
+
+							.select-check__item
+								.select-check__item-content
+									label.input-check
+										if(item.status=='active')
+											input(type='checkbox', checked="checked")
+										else
+											input(type='checkbox')
+										span.input-check__mark
+											+svg('ic-tick','ic-tick', '8', '6')
+										span.input-check__circle(class=item.color?'input-check__circle_'+item.color:'')
+										span.input-check__text= item.text
+
+								.select-check__edit
+									+svg('ic-edit','ic-edit', '14', '14')
+
+			.view
+				.view__item
+					+svg('ic-tile','ic-tile', '12', '12')
+				.view__item.active
+					+svg('ic-lines','ic-lines', '12', '12')
+
+			.btn-circle.btn-circle_big
+				+svg('ic-plus','ic-plus', '12', '12')
+
+	section.cards-line-wrap
+		.tabs-page.tabs-page_line
+			ul.tabs-page__list
+				li.tabs-page__item.active(data-item='tab1')
+					span.tabs-page__count.tabs-page__count_red 4
+					|To Do
+
+				li.tabs-page__item(data-item='tab2')
+					span.tabs-page__count.tabs-page__count_yellow 2
+					|In Progress
+
+				li.tabs-page__item(data-item='tab3')
+					span.tabs-page__count.tabs-page__count_purple 1
+					|Delayed / Blocked
+
+				li.tabs-page__item(data-item='tab4')
+					span.tabs-page__count.tabs-page__count_green 3
+					|Done
+
+			.tabs-page__content
+				#tab1.tabs-page__content-item.active
+					.card-line-wrap
+						.card-line-actions
+							label.input-check
+								input(type='checkbox')
+								span.input-check__mark
+									+svg('ic-tick','ic-tick', '8', '6')
+								span.input-check__text Select all
+
+						
+
+						-
+							var list=[
+								{title:'Create survey', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ava:'2', task:'TASK - 1200'},
+								{title:'Make a plan', text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset", task:'TASK - 1201'},
+								{title:'Call to Jhon', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ava:'2', task:'TASK - 1202'},
+								{title:'Create survey', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit', ava:'2', task:'TASK - 1203'},
+							]
+						each item in list
+							.card-line
+								label.input-check
+									input(type='checkbox')
+									span.input-check__mark
+										+svg('ic-tick','ic-tick', '8', '6')
+								
+								.card-line__content
+									.card-line__title= item.title
+									.card-line__text= item.text
+
+									.card-line__bottom
+										.card-author
+											.card-author__img-list
+												.card-author__img(style="background-image: url(assets/img/woman.png)")
+												if(item.ava == 2)
+													.card-author__img(style="background-image: url(assets/img/woman.png)")
+
+											.card-author__text= item.task
+
+										.card-line__date
+											+svg('ic-clock','ic-clock', '13', '13')
+											|Created: 23 May 2021 at 09:20
+
+								.card-menu(class=item.menu?'open':'')
+									.btn-circle.btn-circle_grey
+										if(item.menu)
+											+svg('ic-close','ic-close', '10', '10')
+										else
+											+svg('ic-dots','ic-dots', '14', '2')
+									
+									.card-menu__popup
+										.card-menu__item
+											.card-menu__item-content
+												.card-menu__icon
+													+svg('ic-move-to','ic-move-to', '18', '14')
+												.card-menu__text Move to
+												.card-menu__arr
+													+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+											.card-menu__sub
+												.card-menu__item
+													.card-menu__item-content
+														.card-menu__circle.card-menu__circle_red
+														.card-menu__text To Do
+
+												.card-menu__item
+													.card-menu__item-content
+														.card-menu__circle.card-menu__circle_yellow
+														.card-menu__text In Progress
+
+												.card-menu__item
+													.card-menu__item-content
+														.card-menu__circle.card-menu__circle_purple
+														.card-menu__text Delayed / Blocked
+
+												.card-menu__item
+													.card-menu__item-content
+														.card-menu__circle
+														.card-menu__text Done
+
+										.card-menu__item
+											.card-menu__item-content
+												.card-menu__icon
+													+svg('ic-edit','ic-edit', '16', '16')
+												.card-menu__text Edit
+
+										.card-menu__item
+											.card-menu__item-content
+												.card-menu__icon
+													+svg('ic-bin','ic-bin', '14', '16')
+												.card-menu__text Delete
+
+				#tab2.tabs-page__content-item
+				#tab3.tabs-page__content-item
+				#tab4.tabs-page__content-item
+
+
+		

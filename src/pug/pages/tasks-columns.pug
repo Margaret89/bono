@@ -1,0 +1,426 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Tasks';
+
+block content
+	section.page-top
+		.page-top__col
+			h1 Tasks
+
+		.page-top__col
+			form.form-search
+				input(type="text", name="search", placeholder="Search")
+				button.form-search__btn(type="submit")
+					+svg('ic-search','ic-search', '15', '15')
+
+			.select-check.select-check_right.open
+				.select-check__field
+					.select-check__info
+						+svg('ic-column','ic-column', '15', '15')
+						|Columns 
+
+					.select-check__arr
+						+svg('ic-arrow-down','ic-arrow-down', '11', '6')
+
+					.select-check__popup(style="width: 220px;")
+						.btn.btn_grey.btn_middle
+							+svg('ic-plus','ic-plus', '10', '10')
+							|Add Columns
+
+						-
+							var list=[
+								{text:'To Do', color:'red', status:'active'},
+								{text:'In Progress', color:'yellow', status:'active'},
+								{text:'Delayed / Blocked', color:'purple', status:'active'},
+								{text:'Done', status:'active'},
+								
+							]
+						each item in list
+							.select-check__item
+								label.input-check
+									if(item.status=='active')
+										input(type='checkbox', checked="checked")
+									else
+										input(type='checkbox')
+									span.input-check__mark
+										+svg('ic-tick','ic-tick', '8', '6')
+									span.input-check__circle(class=item.color?'input-check__circle_'+item.color:'')
+									span.input-check__text= item.text
+								
+								.select-check__edit
+									+svg('ic-edit','ic-edit', '14', '14')
+
+			.view
+				.view__item.active
+					+svg('ic-tile','ic-tile', '12', '12')
+				.view__item
+					+svg('ic-lines','ic-lines', '12', '12')
+
+			.btn-circle.btn-circle_big
+				+svg('ic-plus','ic-plus', '12', '12')
+
+	section.cards
+		.cards__column
+			.cards__top
+				.cards__count.cards__count_red 4
+				|To Do
+
+			.cards__list
+				-
+					var list=[
+						{
+							title:'Create survey',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1200',
+						},
+						{
+							title:'Make a plan',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elitnd improve your acco',
+							ava:'1',
+							task:'TASK - 1201',
+						},
+						{
+							title:'Call to Jhon',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1202',
+						},
+						{
+							title:'Create survey',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1203',
+						},
+					]
+				each item in list
+					.card-item
+						.card-item__top.card-item__top_end
+							.card-item__move
+								+svg('ic-many-dots','ic-many-dots', '6', '10')
+
+							.card-menu
+								.btn-circle.btn-circle_grey
+									+svg('ic-dots','ic-dots', '14', '2')
+								
+								.card-menu__popup
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-move-to','ic-move-to', '18', '14')
+											.card-menu__text Move to
+											.card-menu__arr
+												+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+										.card-menu__sub
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_red
+													.card-menu__text To Do
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_yellow
+													.card-menu__text In Progress
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_purple
+													.card-menu__text Delayed / Blocked
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle
+													.card-menu__text Done
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-edit','ic-edit', '16', '16')
+											.card-menu__text Edit
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-bin','ic-bin', '14', '16')
+											.card-menu__text Delete
+	
+						.card-item__content
+							.card-item__title= item.title
+							.card-item__text= item.text
+
+						.card-item__bottom
+							.card-author
+								.card-author__img-list
+									.card-author__img(style="background-image: url(assets/img/woman.png)")
+									if(item.ava == 2)
+										.card-author__img(style="background-image: url(assets/img/woman.png)")
+
+								.card-author__text= item.task
+
+							.card-item__date 23 May 2021
+	
+		.cards__column
+			.cards__top
+				.cards__count.cards__count_yellow 2
+				|In Progress
+
+			.cards__list
+				-
+					var list=[
+						{
+							title:'Get feedbacks',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1198',
+						},
+						{
+							title:'Create a meeting',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elitnd improve your acco',
+							ava:'1',
+							task:'TASK - 1199',
+						},
+					]
+				each item in list
+					.card-item
+						.card-item__top.card-item__top_end
+							.card-item__move
+								+svg('ic-many-dots','ic-many-dots', '6', '10')
+
+							.card-menu
+								.btn-circle.btn-circle_grey
+									+svg('ic-dots','ic-dots', '14', '2')
+								
+								.card-menu__popup
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-move-to','ic-move-to', '18', '14')
+											.card-menu__text Move to
+											.card-menu__arr
+												+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+										.card-menu__sub
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_red
+													.card-menu__text To Do
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_yellow
+													.card-menu__text In Progress
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_purple
+													.card-menu__text Delayed / Blocked
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle
+													.card-menu__text Done
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-edit','ic-edit', '16', '16')
+											.card-menu__text Edit
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-bin','ic-bin', '14', '16')
+											.card-menu__text Delete
+	
+						.card-item__content
+							.card-item__title= item.title
+							.card-item__text= item.text
+
+						.card-item__bottom
+							.card-author
+								.card-author__img-list
+									.card-author__img(style="background-image: url(assets/img/woman.png)")
+									if(item.ava == 2)
+										.card-author__img(style="background-image: url(assets/img/woman.png)")
+
+								.card-author__text= item.task
+
+							.card-item__date 23 May 2021
+	
+		.cards__column
+			.cards__top
+				.cards__count.cards__count_purple 1
+				|Delayed / Blocked
+
+			.cards__list
+				-
+					var list=[
+						{
+							title:'Send documents',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1197',
+						},
+					]
+				each item in list
+					.card-item
+						.card-item__top.card-item__top_end
+							.card-item__move
+								+svg('ic-many-dots','ic-many-dots', '6', '10')
+
+							.card-menu
+								.btn-circle.btn-circle_grey
+									+svg('ic-dots','ic-dots', '14', '2')
+								
+								.card-menu__popup
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-move-to','ic-move-to', '18', '14')
+											.card-menu__text Move to
+											.card-menu__arr
+												+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+										.card-menu__sub
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_red
+													.card-menu__text To Do
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_yellow
+													.card-menu__text In Progress
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_purple
+													.card-menu__text Delayed / Blocked
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle
+													.card-menu__text Done
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-edit','ic-edit', '16', '16')
+											.card-menu__text Edit
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-bin','ic-bin', '14', '16')
+											.card-menu__text Delete
+	
+						.card-item__content
+							.card-item__title= item.title
+							.card-item__text= item.text
+
+						.card-item__bottom
+							.card-author
+								.card-author__img-list
+									.card-author__img(style="background-image: url(assets/img/woman.png)")
+									if(item.ava == 2)
+										.card-author__img(style="background-image: url(assets/img/woman.png)")
+
+								.card-author__text= item.task
+
+							.card-item__date 23 May 2021
+		
+		.cards__column
+			.cards__top
+				.cards__count 3
+				|Done
+
+			.cards__list
+				-
+					var list=[
+						{
+							title:'Create survey',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1196',
+						},
+						{
+							title:'Make a plan',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elitnd improve your acco',
+							ava:'1',
+							task:'TASK - 1204',
+						},
+						{
+							title:'Call to Sara',
+							text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+							ava:'2',
+							task:'TASK - 1205',
+						},
+					]
+				each item in list
+					.card-item
+						.card-item__top.card-item__top_end
+							.card-item__move
+								+svg('ic-many-dots','ic-many-dots', '6', '10')
+
+							.card-menu
+								.btn-circle.btn-circle_grey
+									+svg('ic-dots','ic-dots', '14', '2')
+								
+								.card-menu__popup
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-move-to','ic-move-to', '18', '14')
+											.card-menu__text Move to
+											.card-menu__arr
+												+svg('ic-arrow-right','ic-arrow-right', '6', '11')
+
+										.card-menu__sub
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_red
+													.card-menu__text To Do
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_yellow
+													.card-menu__text In Progress
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle.card-menu__circle_purple
+													.card-menu__text Delayed / Blocked
+
+											.card-menu__item
+												.card-menu__item-content
+													.card-menu__circle
+													.card-menu__text Done
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-edit','ic-edit', '16', '16')
+											.card-menu__text Edit
+
+									.card-menu__item
+										.card-menu__item-content
+											.card-menu__icon
+												+svg('ic-bin','ic-bin', '14', '16')
+											.card-menu__text Delete
+	
+						.card-item__content
+							.card-item__title= item.title
+							.card-item__text= item.text
+
+						.card-item__bottom
+							.card-author
+								.card-author__img-list
+									.card-author__img(style="background-image: url(assets/img/woman.png)")
+									if(item.ava == 2)
+										.card-author__img(style="background-image: url(assets/img/woman.png)")
+
+								.card-author__text= item.task
+
+							.card-item__date 23 May 2021

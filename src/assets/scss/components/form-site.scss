@@ -182,6 +182,19 @@
 		background-position: center;
 		background-size: cover;
 	}
+
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+
+		.input-date,
+		.input-time{
+			width: calc(50% - 12px);
+		}
+
+		.input-date + .input-time{margin: 0;}
+	}
 }
 
 .time-label{
@@ -523,6 +536,11 @@
 .form-site-add{
 	width: 100%;
 	margin-top: 30px;
+	
+	&__label{
+		@include font(none, none, 1.4rem, 1.6, $color-text);
+		margin-bottom: 5px;
+	}
 
 	&__item{
 		margin-bottom: 10px;
@@ -613,6 +631,31 @@
 		&:hover{
 			background: #000;
 			.icon{fill: #fff;}
+		}
+	}
+}
+
+.color-choose{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		opacity: 0.3;
+		transition: opacity 0.2s ease 0s;
+		cursor: pointer;
+
+		.icon{fill: #fff;}
+
+		&:hover,
+		&.active{
+			opacity: 1;
 		}
 	}
 }

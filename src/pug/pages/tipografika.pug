@@ -71,6 +71,11 @@ block content
 					|Кнопка
 				br
 				br
+				a.btn.btn_red-light(href='#')
+					+svg('ic-briefcase','ic-briefcase', '15', '15')
+					|Кнопка
+				br
+				br
 				a.btn.btn_border(href='#')
 					+svg('ic-briefcase','ic-briefcase', '15', '15')
 					|Кнопка
@@ -113,6 +118,20 @@ block content
 				br
 				.h2 Табуляция
 				.tabs-page
+					ul.tabs-page__list
+						li.tabs-page__item.active(data-item='tab1') Tab1
+						li.tabs-page__item(data-item='tab2') Tab2
+						li.tabs-page__item(data-item='tab3') Tab3
+						li.tabs-page__item(data-item='tab4') Tab4
+						
+					.tabs-page__content
+						#tab1.tabs-page__content-item.active Text 1
+						#tab2.tabs-page__content-item Text 2
+						#tab3.tabs-page__content-item Text 3
+						#tab4.tabs-page__content-item Text 4
+				br
+				br
+				.tabs-page.tabs-page_line
 					ul.tabs-page__list
 						li.tabs-page__item.active(data-item='tab1') Tab1
 						li.tabs-page__item(data-item='tab2') Tab2
@@ -498,3 +517,13 @@ block content
 						.type-icon__img
 							+svg('ic-paper','ic-paper', '13', '14')
 						.type-icon__name ic-paper
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-flag','ic-flag', '14', '20')
+						.type-icon__name ic-flag
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-map','ic-map', '17', '20')
+						.type-icon__name ic-map
